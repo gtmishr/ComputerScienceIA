@@ -1,3 +1,30 @@
 * {
-  background-color: green;
+  font-family: 'Merriweather', serif;
+}
+
+#mainHeader, #introductionSentence {
+  text-align: center;
+}
+
+#mainHeader {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+#testProject {
+  margin-left: 25px;
+  margin-bottom: 10px;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: thin;
+  text-align: center;
+}
+
+#buildingProjectTitle, #buildingDescription #projectPhoto {
+  margin: 10px;
+}
+
+#projectPhoto {
+  height: 250px;
+  margin-right: 10px;
 }
