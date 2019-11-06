@@ -1,3 +1,3 @@
-function testFunction() {
-  console.log("yeah this is mad");
+function createNewProject() {
+  console.log("Print something in the console");
 }
