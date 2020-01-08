@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class ConstructionProject {
 
   private String clientName;
@@ -10,17 +12,16 @@ public class ConstructionProject {
   public String description;
   public String photoAddress;
 
-//  public Contractor[] contractorList;
-//  public String[] todoList;
+  ArrayList<Contractor> contractorList = new ArrayList<Contractor>();
 
-  public ConstructionProject(String clientName, String streetAddress, String suburb, String description, String photoAddress) {
+  public ConstructionProject(String clientName, String streetAddress, String suburb, String description, String photoAddress, ArrayList<Contractor> contractorList) {
       this.clientName = clientName;
       this.streetAddress = streetAddress;
       this.suburb = suburb;
       this.description = description;
       this.photoAddress = photoAddress;
-//      this.todoList = todoList;
-//      this.contractorList = contractorList;
+      this.contractorList = contractorList;
+//      this.todoList = new ArrayList<TodoItem>();
     }
 
   void listSpecifications() {
@@ -29,6 +30,12 @@ public class ConstructionProject {
 
   void listClientName() {
     System.out.println("The client for this project is " + getClientName());
+  }
+
+  void listContractors() {
+    for (Contractor contractors : contractorList) {
+      System.out.println(contractorList);
+    }
   }
 
 }
