@@ -8,13 +8,15 @@ public class MainProgram {
       ArrayList<Contractor> sampleContractorList = new ArrayList<Contractor>();
       sampleContractorList.add(zilingOuyang);
 
-      TodoItem getThisDone = new TodoItem("sample sample sample", "11/01/2020", "Incomplete");
+      TodoItem getThisDone = new TodoItem("sample sample sample", "11/01/2020", "15/01/2020", "Incomplete");
       ArrayList<TodoItem> sampleTodoList = new ArrayList<TodoItem>();
       sampleTodoList.add(getThisDone);
 
       ConstructionProject mishraHouse = new ConstructionProject("Rajesh Mishra", "18 Trumble Street", "Pearce", "Currently in development", "sampleHouse.jpg", sampleContractorList, sampleTodoList);
 
       zilingOuyang.listContractorSpecifications();
+
+      getThisDone.listTodoItemSpecifications();
 
       mishraHouse.listSpecifications();
       mishraHouse.listClientName();

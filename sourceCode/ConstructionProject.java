@@ -31,7 +31,7 @@ public class ConstructionProject {
 
   void listContractors() {
     for (Contractor contractors : contractorList) {
-      System.out.println(contractorList);
+      System.out.println(contractors);
     }
   }
 
