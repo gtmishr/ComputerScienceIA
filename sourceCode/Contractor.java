@@ -1,13 +1,42 @@
 public class Contractor {
 
-  public String firstName;
-  public String lastName;
-  public String typeOfContractor;
+  private String licenceID;
+  private String licenceNumber;
 
-  public ConstructionProject(String firstName, String lastName, String typeOfContractor) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.typeOfContractor = typeOfContractor;
+  public String getLicenceID() {
+    return licenceID;
+  }
+
+  public String getLicenceNumber() {
+    return licenceNumber;
+  }
+
+  public String businessNames;
+  public String categories;
+  public String classes;
+  public String licenceName;
+  public String licenceType;
+  public String licensee;
+  public String postcode;
+  public String status;
+  public String suburb;
+
+  public ConstructionProject(String licenceID, String licenceNumber, String businessNames, String categories, String classes, String licenceName, String licenceType, String licensee, String postcode, Sting status, String suburb) {
+    this.licenceID = getLicenceID();
+    this.licenceNumber = getLicenceNumber();
+    this.businessNames = businessNames;
+    this.categories = categories;
+    this.classes = classes;
+    this.licenceName = licenceName;
+    this.licenceType = licenceType;
+    this.licensee = licensee;
+    this.postcode = postcode;
+    this.status = status;
+    this.suburb = suburb;
+  }
+
+  void listContractorSpecifications() {
+    System.out.println("Licence ID: " + getLicenceID() + ", Licence Number: " + getLicenceNumber() + ", Business names: " + businessNames + ", Categories: " + categories + ", Classes: " + classes +  ", Licence Name: " + licenceName + ", Licence Type: " + licenceType + ", Licensee: " + licensee + ", Postcode: " + postcode + ", Status: " + status + ", Suburb: " + suburb);
   }
 
 }
