@@ -21,9 +21,9 @@ public class Contractor {
   public String status;
   public String suburb;
 
-  public ConstructionProject(String licenceID, String licenceNumber, String businessNames, String categories, String classes, String licenceName, String licenceType, String licensee, String postcode, Sting status, String suburb) {
-    this.licenceID = getLicenceID();
-    this.licenceNumber = getLicenceNumber();
+  public Contractor(String licenceID, String licenceNumber, String businessNames, String categories, String classes, String licenceName, String licenceType, String licensee, String postcode, String status, String suburb) {
+    this.licenceID = licenceID;
+    this.licenceNumber = licenceNumber;
     this.businessNames = businessNames;
     this.categories = categories;
     this.classes = classes;

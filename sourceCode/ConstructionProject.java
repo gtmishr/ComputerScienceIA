@@ -10,17 +10,17 @@ public class ConstructionProject {
   public String description;
   public String photoAddress;
 
-  public Contractor[] contractorList;
-  public String[] todoList;
+//  public Contractor[] contractorList;
+//  public String[] todoList;
 
-  public ConstructionProject(String clientName, String streetAddress, String suburb, String description, String photoAddress, ) {
+  public ConstructionProject(String clientName, String streetAddress, String suburb, String description, String photoAddress) {
       this.clientName = clientName;
       this.streetAddress = streetAddress;
       this.suburb = suburb;
       this.description = description;
       this.photoAddress = photoAddress;
-      this.todoList = todoList;
-      this.contractorList = contractorList;
+//      this.todoList = todoList;
+//      this.contractorList = contractorList;
     }
 
   void listSpecifications() {
