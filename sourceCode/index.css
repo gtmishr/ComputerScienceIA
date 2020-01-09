@@ -39,6 +39,7 @@
   float: left;   
 }
 
+
 #newProjectButton, #projectButton, #search {
   text-align: center;
   border-radius: 10px;
@@ -53,6 +54,10 @@
 
 #buildingProjectTitle, #buildingDescription, #projectPhoto {
   margin: 10px;
+}
+
+#buildingProjectTitle {
+    font-size: 14px;
 }
 
 #projectPhoto {
