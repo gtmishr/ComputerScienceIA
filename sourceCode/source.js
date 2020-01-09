@@ -4,15 +4,14 @@ function createNewButton() {
 
 function searchBar() {
 
-  var input, filter, searchMenu, searchList, link, i;
-
-  input = document.getElementById("searchBar");
-  filter = input.value.toUpperCase();
-  searchMenu = document.getElementById("searchMenu");
-  searchList = searchMenu.getElementsByTagName("li");
+  var input = document.getElementById("searchBar");
+  var filter = input.value.toUpperCase();
+  var searchMenu = document.getElementById("searchMenu");
+  var searchList = searchMenu.getElementsByTagName("li");
+  var i;
 
   for (i = 0; i < searchList.length; i++) {
-    link = searchList[i].getElementsByTagName("a")[0];
+    var link = searchList[i].getElementsByTagName("a")[0];
 
     if (link.innerHTML.toUpperCase().indexOf(filter) > - 1) {
       searchList[i].style.display = "";
