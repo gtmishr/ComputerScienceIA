@@ -1,8 +1,25 @@
-$.getJSON("https://api.onegov.nsw.gov.au/oauth/client_credential/accesstoken",
-  function() {
-
-});
-
 function createNewButton() {
     console.log("this is cool");
+}
+
+function searchBar() {
+
+  var input, filter, ul, li, a, i;
+
+  input = document.getElementById("search");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("menu");
+  li = ul.getElementsByTagName("li");
+
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+
+  }
+
 }

@@ -1,4 +1,6 @@
-public class Contractor {
+import java.util.Comparator;
+
+public class Contractor{
 
   private String licenceID;
   private String licenceNumber;

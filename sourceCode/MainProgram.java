@@ -1,4 +1,6 @@
 import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.net.URLConnection;
 import java.net.HttpURLConnection;
 import java.net.URLEncoder;
@@ -35,7 +37,10 @@ public class MainProgram {
 //      sampleTask1.listTodoItemSpecifications();
 //      sampleTask2.listTodoItemSpecifications();
 
+//      System.out.println(sampleContractorList.get(0).licenceType);
+
       System.out.println(sampleContractorList);
+      System.out.println(sampleTodoList);
 
 //      mishraHouse.listSpecifications();
 //      mishraHouse.listClientName();
