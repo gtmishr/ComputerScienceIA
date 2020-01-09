@@ -30,14 +30,13 @@
   margin: 0;
 }
 
-#menu li a {
-  padding: 12px;
+#menu li {
   text-decoration: none;
   color: black;
   display: block
 }
 
-#menu li a:hover {
+#menu li button:hover {
   background-color: #eee;
 }
 
@@ -55,7 +54,12 @@
   text-align: center;
   text-align: center;
   border-radius: 10px;
-  margin: 10px;
+  margin: 5px;
+}
+
+#projectButton {
+    width: 397px;
+    height: 400px;
 }
 
 #buildingProjectTitle, #buildingDescription #projectPhoto {
