@@ -13,26 +13,35 @@ public class MainProgram {
 
     public static void main(String[] args) throws Exception {
 
-      Contractor zilingOuyang = new Contractor("234567", "345678", "CGS", "Smart", "Maths HL", "Ziling Ouyang", "All-round sensation", "Gautam Mishra", "2603", "Stressed over IAs", "Red Hill");
+      Contractor sampleContractor1 = new Contractor("234567", "345678", "CGS", "Smart", "Maths HL", "Ziling Ouyang", "All-round sensation", "Gautam Mishra", "2603", "Stressed over IAs", "Red Hill");
+      Contractor sampleContractor2 = new Contractor("345678", "456789", "CGS", "Smart", "Maths HL", "Ziling Ouyang", "All-round sensation", "Gautam Mishra", "2603", "Stressed over IAs", "Red Hill");
+
       ArrayList<Contractor> sampleContractorList = new ArrayList<Contractor>();
-      sampleContractorList.add(zilingOuyang);
+      sampleContractorList.add(sampleContractor1);
+      sampleContractorList.add(sampleContractor2);
 
-      TodoItem getThisDone = new TodoItem("sample sample sample", LocalDate.now(), LocalDate.of(2020, 10, 9), "Incomplete");
+      TodoItem sampleTask1 = new TodoItem("sample sample sample", LocalDate.now(), LocalDate.of(2020, 10, 9), "Incomplete");
+      TodoItem sampleTask2 = new TodoItem("sample sample sample", LocalDate.now(), LocalDate.of(2020, 11, 9), "Incomplete");
+
       ArrayList<TodoItem> sampleTodoList = new ArrayList<TodoItem>();
-
-      sampleTodoList.add(getThisDone);
+      sampleTodoList.add(sampleTask1);
+      sampleTodoList.add(sampleTask2);
 
       ConstructionProject mishraHouse = new ConstructionProject("Rajesh Mishra", "18 Trumble Street", "Pearce", "Currently in development", "sampleHouse.jpg", sampleContractorList, sampleTodoList);
 
-      zilingOuyang.listContractorSpecifications();
+//      sampleContractor1.listContractorSpecifications();
+//      sampleContractor2.listContractorSpecifications();
 
-      getThisDone.listTodoItemSpecifications();
+//      sampleTask1.listTodoItemSpecifications();
+//      sampleTask2.listTodoItemSpecifications();
 
-      mishraHouse.listSpecifications();
-      mishraHouse.listClientName();
+      System.out.println(sampleContractorList);
 
-      mishraHouse.listContractors();
-      mishraHouse.listTodoItems();
+//      mishraHouse.listSpecifications();
+//      mishraHouse.listClientName();
+
+//      mishraHouse.listContractors();
+//      mishraHouse.listTodoItems();
 
     }
 }
