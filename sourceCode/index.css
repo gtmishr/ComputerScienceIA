@@ -1,5 +1,6 @@
 * {
   font-family: 'Merriweather', serif;
+  text-align: center;
 }
 
 #mainHeader, #introductionSentence {
@@ -9,65 +10,52 @@
 }
 
 #mainHeader {
-  margin-top: 50px;
-  margin-bottom: 25px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 #newProjectButton {
   float: none;
 }
 
-#search {
-  width: 100%;
-  font-size: 18px;
-  padding: 11px;
+#searchBar {
+  width: 70%;
+  font-size: 14px;
+  padding: 4px;
   border: 1px solid #ddd;
 }
 
-#menu {
+#searchMenu {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-#menu li {
-  text-decoration: none;
-  color: black;
-  display: block
-}
-
-#menu li button:hover {
+#searchMenu li button:hover {
   background-color: #eee;
 }
 
-#testProject {
-  float: left;
-  margin-right: 5px;
+#searchMenu li {
+  float: left;   
 }
 
-.wrapper {
-  text-align: center;
-  position: inherit;
-}
-
-#newProjectButton, #projectButton {
-  text-align: center;
+#newProjectButton, #projectButton, #search {
   text-align: center;
   border-radius: 10px;
   margin: 5px;
 }
 
 #projectButton {
-    width: 397px;
-    height: 400px;
+    width: inherit;
+    height: auto;
+    float: none;
 }
 
-#buildingProjectTitle, #buildingDescription #projectPhoto {
+#buildingProjectTitle, #buildingDescription, #projectPhoto {
   margin: 10px;
 }
 
 #projectPhoto {
-  height: 250px;
-  margin-right: 10px;
-  margin-left: 10px;
+  height: 150px;
+  margin: 5px;
 }

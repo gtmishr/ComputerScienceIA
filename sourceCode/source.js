@@ -4,20 +4,20 @@ function createNewButton() {
 
 function searchBar() {
 
-  var input, filter, ul, li, a, i;
+  var input, filter, searchMenu, searchList, link, i;
 
-  input = document.getElementById("search");
+  input = document.getElementById("searchBar");
   filter = input.value.toUpperCase();
-  ul = document.getElementById("menu");
-  li = ul.getElementsByTagName("li");
+  searchMenu = document.getElementById("searchMenu");
+  searchList = searchMenu.getElementsByTagName("li");
 
-  for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName("a")[0];
+  for (i = 0; i < searchList.length; i++) {
+    link = searchList[i].getElementsByTagName("a")[0];
 
-    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
+    if (link.innerHTML.toUpperCase().indexOf(filter) > - 1) {
+      searchList[i].style.display = "";
     } else {
-      li[i].style.display = "none";
+      searchList[i].style.display = "none";
     }
 
   }
