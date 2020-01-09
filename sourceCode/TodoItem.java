@@ -1,11 +1,13 @@
+import java.time.LocalDate;
+
 public class TodoItem {
 
   public String itemName;
-  public String dateAdded;
-  public String dateToCompleteBy;
+  LocalDate dateAdded = LocalDate.now();
+  LocalDate dateToCompleteBy = LocalDate.now();
   public String status;
 
-  public TodoItem(String itemName, String dateAdded, String dateToCompleteBy, String status) {
+  public TodoItem(String itemName, LocalDate dateAdded, LocalDate dateToCompleteBy, String status) {
     this.itemName = itemName;
     this.dateAdded = dateAdded;
     this.dateToCompleteBy = dateToCompleteBy;
