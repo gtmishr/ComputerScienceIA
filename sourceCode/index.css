@@ -1,12 +1,12 @@
 * {
-  font-family: 'Merriweather', serif;
-  text-align: center;
+    font-family: 'Merriweather', serif;
+    text-align: center;
 }
 
 #mainHeader, #introductionSentence {
-  text-align: center;
-  margin-left: 15px;
-  margin-right: 15px;
+    text-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 #mainHeader {
@@ -15,46 +15,46 @@
 }
 
 #searchBar {
-  width: 70%;
-  font-size: 14px;
-  padding: 4px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
+    width: 70%;
+    font-size: 14px;
+    padding: 4px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
     margin-bottom: 7.5px;
 }
 
 #searchMenu {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 #searchMenu li {
-  float: left;   
+    float: left;   
 }
 
 #searchMenu li button:hover {
-  background-color: #eee;
+    background-color: #eee;
 }
 
 #newProjectButton, #projectButton {
-  text-align: center;
-  border-radius: 10px;
-  margin: 5px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 5px;
 }
 
 #newProjectButton {
-  float: none;
+    float: none;
 }
 
-#projectButton {
+.projectButton {
     width: inherit;
-    height: auto;
+    height: 250px;
     float: none;
 }
 
 #buildingProjectTitle, #buildingDescription, #projectPhoto {
-  margin: 10px;
+    margin: 10px;
 }
 
 #buildingProjectTitle {
@@ -62,6 +62,6 @@
 }
 
 #projectPhoto {
-  height: 150px;
-  margin: 5px;
+    height: 150px;
+    margin: 5px;
 }
