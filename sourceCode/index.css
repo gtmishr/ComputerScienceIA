@@ -27,10 +27,12 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
 }
 
 #searchMenu li {
-    float: left;   
+    float: left; 
+    overflow-x: hidden;
 }
 
 #searchMenu li button:hover {
@@ -48,9 +50,7 @@
 }
 
 .projectButton {
-    width: inherit;
     height: 250px;
-    float: none;
 }
 
 #buildingProjectTitle, #buildingDescription, #projectPhoto {

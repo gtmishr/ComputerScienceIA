@@ -1,7 +1,6 @@
 function searchBar() {
 
-  var input = document.getElementById("searchBar");
-  var filter = input.value.toUpperCase();
+  var filter = document.getElementById("searchBar").value.toUpperCase();
   var searchMenu = document.getElementById("searchMenu");
   var searchList = searchMenu.getElementsByTagName("li");
   var i;
@@ -24,15 +23,12 @@ function createNewButton() {
 }
 
 var isProjectExpanded = false;
-
 function expandProject(projectNumber) {
 
-  if (isProjectExpanded == false) {
-    console.log(isProjectExpanded);
+  if (document.getElementById("project" + projectNumber).style.height == "250px") {
     document.getElementById("project" + projectNumber).style.height = "800px";
     isProjectExpanded = true;
   } else {
-    console.log(isProjectExpanded);
     document.getElementById("project" + projectNumber).style.height = "250px";
     isProjectExpanded = false;
   }
