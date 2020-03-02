@@ -41,8 +41,4 @@ public class ConstructionProject {
     }
   }
 
-  void listClientName() {
-    System.out.println("The client for this project is " + getClientName());
-  }
-
 }
