@@ -42,7 +42,7 @@ public class Contractor {
     this.suburb = suburb;
   }
 
-  // Print out contractor specifiations as mentioned previously
+  // Print out Contractor specifiations as mentioned previously
   void listContractorSpecifications() {
     System.out.println("Licence ID: " + getLicenceID() + ", Licence Number: " + getLicenceNumber() + ", Business names: " + businessNames + ", Categories: " + categories + ", Classes: " + classes +  ", Licence Name: " + licenceName + ", Licence Type: " + licenceType + ", Licensee: " + licensee + ", Postcode: " + postcode + ", Status: " + status + ", Suburb: " + suburb);
   }
