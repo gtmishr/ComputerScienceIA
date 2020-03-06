@@ -1,18 +1,23 @@
 import java.util.Comparator;
 
-public class Contractor{
+// Class for giving Contractor attributes
+public class Contractor {
 
+  // Private for encapsulation
   private String licenceID;
   private String licenceNumber;
 
   public String getLicenceID() {
+    // Encapsulate licenceID to not alter accidentally
     return licenceID;
   }
 
   public String getLicenceNumber() {
+    // Encapsulate licenceNumber to not alter accidentally
     return licenceNumber;
   }
 
+  // All of the attributes that are mentioned on the NSW API website
   public String businessNames;
   public String categories;
   public String classes;
@@ -37,6 +42,7 @@ public class Contractor{
     this.suburb = suburb;
   }
 
+  // Print out contractor specifiations as mentioned previously
   void listContractorSpecifications() {
     System.out.println("Licence ID: " + getLicenceID() + ", Licence Number: " + getLicenceNumber() + ", Business names: " + businessNames + ", Categories: " + categories + ", Classes: " + classes +  ", Licence Name: " + licenceName + ", Licence Type: " + licenceType + ", Licensee: " + licensee + ", Postcode: " + postcode + ", Status: " + status + ", Suburb: " + suburb);
   }
