@@ -1,6 +1,6 @@
 function searchBar() {
 
-  var filter = document.getElementById("searchBar").value.toUpperCase();
+  var query = document.getElementById("searchBar").value.toUpperCase();
   var searchMenu = document.getElementById("searchMenu");
   var searchList = searchMenu.getElementsByTagName("li");
   var i;
@@ -8,7 +8,7 @@ function searchBar() {
   for (i = 0; i < searchList.length; i++) {
     var link = searchList[i].getElementsByTagName("a")[0];
 
-    if (link.innerHTML.toUpperCase().indexOf(filter) > - 1) {
+    if (link.innerHTML.toUpperCase().indexOf(query) > - 1) {
       searchList[i].style.display = "";
     } else {
       searchList[i].style.display = "none";
@@ -23,6 +23,7 @@ function createNewButton() {
 }
 
 var isProjectExpanded = false;
+
 function expandProject(projectNumber) {
 
   if (document.getElementById("project" + projectNumber).style.height == "250px") {
