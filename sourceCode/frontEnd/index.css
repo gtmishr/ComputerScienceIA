@@ -51,13 +51,14 @@
 
 .testProject {
     height: 500px;
-    width: 600px;
+    width: 400px;
 }
 
 table {
     border: 1px solid black;
     display: none;
     border-collapse: collapse;
+    overflow: auto;
 }
 
 th:hover, td:hover {
