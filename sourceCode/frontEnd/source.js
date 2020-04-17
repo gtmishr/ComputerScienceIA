@@ -28,9 +28,11 @@ function expandProject(projectNumber) {
 
   if (isProjectExpandedArray[projectNumber - 1] == false) {
     document.getElementById("project" + projectNumber).style.height = "800px";
+    document.getElementById("project" + projectNumber + "Table").style.display = "block"
     isProjectExpandedArray[projectNumber - 1] = true;
   } else {
     document.getElementById("project" + projectNumber).style.height = "500px";
+    document.getElementById("project" + projectNumber + "Table").style.display = "none"
     isProjectExpandedArray[projectNumber - 1] = false;
   }
 

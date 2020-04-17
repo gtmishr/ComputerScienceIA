@@ -51,7 +51,12 @@
 
 .testProject {
     height: 500px;
-    width: 300px;
+    width: 450px;
+}
+
+table {
+    border: 1px solid black;
+    display: none;
 }
 
 #buildingProjectTitle, #buildingDescription, #projectPhoto {
