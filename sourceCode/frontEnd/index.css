@@ -49,8 +49,9 @@
     float: none;
 }
 
-.projectButton {
-    height: 250px;
+.testProject {
+    height: 500px;
+    width: 300px;
 }
 
 #buildingProjectTitle, #buildingDescription, #projectPhoto {

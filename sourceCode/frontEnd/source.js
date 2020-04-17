@@ -22,16 +22,16 @@ function createNewButton() {
   console.log("this is cool");
 }
 
-var isProjectExpanded = false;
+var isProjectExpandedArray = [false, false]
 
 function expandProject(projectNumber) {
 
-  if (document.getElementById("project" + projectNumber).style.height == "250px") {
+  if (isProjectExpandedArray[projectNumber - 1] == false) {
     document.getElementById("project" + projectNumber).style.height = "800px";
-    isProjectExpanded = true;
+    isProjectExpandedArray[projectNumber - 1] = true;
   } else {
-    document.getElementById("project" + projectNumber).style.height = "250px";
-    isProjectExpanded = false;
+    document.getElementById("project" + projectNumber).style.height = "500px";
+    isProjectExpandedArray[projectNumber - 1] = false;
   }
 
 }
