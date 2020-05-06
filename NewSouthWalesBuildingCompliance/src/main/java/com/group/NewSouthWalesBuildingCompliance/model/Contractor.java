@@ -1,67 +1,36 @@
 package com.group.NewSouthWalesBuildingCompliance.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Contractor {
 
     // Private for encapsulation
-    private static String licenceID;
-    private static String licenceNumber;
-    private static String businessNames;
-    private static String categories;
-    private static String classes;
-    private static String licenceName;
-    private static String licenceType;
-    private static String licensee;
-    private static String postcode;
-    private static String status;
-    private static String suburb;
-
-    public static String getLicenceID() {
-        return licenceID;
-    }
-
-    public static String getLicenceNumber() {
-        return licenceNumber;
-    }
-
-    public static String getBusinessNames() {
-        return businessNames;
-    }
-
-    public static String getCategories() {
-        return categories;
-    }
-
-    public static String getClasses() {
-        return classes;
-    }
-
-    public static String getLicenceName() {
-        return licenceName;
-    }
-
-    public static String getLicenceType() {
-        return licenceType;
-    }
-
-    public static String getLicensee() {
-        return licensee;
-    }
-
-    public static String getPostcode() {
-        return postcode;
-    }
-
-    public static String getStatus() {
-        return status;
-    }
-
-    public static String getSuburb() {
-        return suburb;
-    }
+    private final String licenceID;
+    private final String licenceNumber;
+    private final String businessNames;
+    private final String categories;
+    private final String classes;
+    private final String licenceName;
+    private final String licenceType;
+    private final String licensee;
+    private final String postcode;
+    private final String status;
+    private final String suburb;
 
     // All of the attributes that are mentioned on the NSW API website
 
-    public Contractor(String licenceID, String licenceNumber, String businessNames, String categories, String classes, String licenceName, String licenceType, String licensee, String postcode, String status, String suburb) {
+    public Contractor(@JsonProperty("licenceID") String licenceID,
+                      @JsonProperty("licenceNumber") String licenceNumber,
+                      @JsonProperty("businessNames") String businessNames,
+                      @JsonProperty("categories") String categories,
+                      @JsonProperty("classes") String classes,
+                      @JsonProperty("licenceName") String licenceName,
+                      @JsonProperty("licenceType") String licenceType,
+                      @JsonProperty("licensee") String licensee,
+                      @JsonProperty("postcode") String postcode,
+                      @JsonProperty("status") String status,
+                      @JsonProperty("suburb") String suburb) {
+
         this.licenceID = licenceID;
         this.licenceNumber = licenceNumber;
         this.businessNames = businessNames;
@@ -75,9 +44,38 @@ public class Contractor {
         this.suburb = suburb;
     }
 
-    // Print out Contractor specifiations as mentioned previously
-    void listContractorSpecifications() {
-        System.out.println("Licence ID: " + getLicenceID() + ", Licence Number: " + getLicenceNumber() + ", Business names: " + businessNames + ", Categories: " + categories + ", Classes: " + classes +  ", Licence Name: " + licenceName + ", Licence Type: " + licenceType + ", Licensee: " + licensee + ", Postcode: " + postcode + ", Status: " + status + ", Suburb: " + suburb);
+    public String getLicenceID() {
+        return licenceID;
+    }
+    public String getLicenceNumber() {
+        return licenceNumber;
+    }
+    public String getBusinessNames() {
+        return businessNames;
+    }
+    public String getCategories() {
+        return categories;
+    }
+    public String getClasses() {
+        return classes;
+    }
+    public String getLicenceName() {
+        return licenceName;
+    }
+    public String getLicenceType() {
+        return licenceType;
+    }
+    public String getLicensee() {
+        return licensee;
+    }
+    public String getPostcode() {
+        return postcode;
+    }
+    public String getStatus() {
+        return status;
+    }
+    public String getSuburb() {
+        return suburb;
     }
 
 }
