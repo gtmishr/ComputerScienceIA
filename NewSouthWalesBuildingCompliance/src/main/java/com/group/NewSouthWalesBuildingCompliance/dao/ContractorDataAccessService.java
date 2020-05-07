@@ -16,7 +16,19 @@ public class ContractorDataAccessService implements ContractorDao {
 
     @Override
     public List<Contractor> selectAllContractors() {
-        return List.of(new Contractor("09876", "98765", "9876", "98765", "8765", "8765", "9876", "9876", "98765", "9876", "98765"));
+        return List.of(new Contractor(
+                "PostGres",
+                "PostGres",
+                "PostGres",
+                "PostGres",
+                "PostGres",
+                "PostGres",
+                "PostGres",
+                "PostGres",
+                "PostGres",
+                "PostGres",
+                "PostGres"
+        ));
     }
 
     @Override
