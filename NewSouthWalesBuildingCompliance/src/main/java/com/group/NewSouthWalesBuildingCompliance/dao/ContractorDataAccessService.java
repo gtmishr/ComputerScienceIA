@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
-@Repository("postgres")
+@Repository("postGres")
 public class ContractorDataAccessService implements ContractorDao {
     
     @Override
@@ -17,17 +17,17 @@ public class ContractorDataAccessService implements ContractorDao {
     @Override
     public List<Contractor> selectAllContractors() {
         return List.of(new Contractor(
-                "postgres",
-                "postgres",
-                "postgres",
-                "postgres",
-                "postgres",
-                "postgres",
-                "postgres",
-                "postgres",
-                "postgres",
-                "postgres",
-                "postgres"
+                "PostGres",
+                "PostGres",
+                "PostGres",
+                "PostGres",
+                "PostGres",
+                "PostGres",
+                "PostGres",
+                "PostGres",
+                "PostGres",
+                "PostGres",
+                "PostGres"
         ));
     }
 

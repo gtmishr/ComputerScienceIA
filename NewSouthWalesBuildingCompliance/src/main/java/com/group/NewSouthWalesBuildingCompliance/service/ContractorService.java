@@ -15,7 +15,7 @@ public class ContractorService {
     private final ContractorDao contractorDao;
 
     @Autowired
-    public ContractorService(@Qualifier("postgres") ContractorDao contractorDao) {
+    public ContractorService(@Qualifier("fakeDao") ContractorDao contractorDao) {
         this.contractorDao = contractorDao;
     }
 
