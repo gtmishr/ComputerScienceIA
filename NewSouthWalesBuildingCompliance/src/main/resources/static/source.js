@@ -27,10 +27,10 @@ var isProjectExpandedArray = [false, false]
 function expandProject(projectNumber) {
 
   if (isProjectExpandedArray[projectNumber - 1] == false) {
-    document.getElementById("project" + projectNumber).style.height = "800px";
-    document.getElementById("project" + projectNumber).style.width = "700px";
-    document.getElementById("project" + projectNumber + "TodoItemsTable").style.display = "block";
-    document.getElementById("project" + projectNumber + "Table").style.display = "block";
+    document.getElementById("project" + projectNumber).style.height = "900px";
+    document.getElementById("project" + projectNumber).style.width = "900px";
+    document.getElementById("project" + projectNumber + "TodoItemsTable").style.display = "inherit";
+    document.getElementById("project" + projectNumber + "ContractorTable").style.display = "inherit";
     isProjectExpandedArray[projectNumber - 1] = true;
   } else {
     document.getElementById("project" + projectNumber).style.height = "500px";
