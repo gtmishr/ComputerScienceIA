@@ -56,7 +56,6 @@
 
 table {
     border: 1px solid black;
-    display: none;
     border-collapse: collapse;
     overflow: auto;
 }
