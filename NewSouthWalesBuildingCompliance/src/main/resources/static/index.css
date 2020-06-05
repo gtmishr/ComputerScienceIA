@@ -72,15 +72,15 @@ th, td {
     border: 1px solid black;
 }
 
-#buildingProjectTitle, #buildingDescription, #projectPhoto {
+.buildingProjectTitle, .buildingDescription, .projectPhoto {
     margin: 10px;
 }
 
-#buildingProjectTitle {
+.buildingProjectTitle {
     font-size: 14px;
 }
 
-#projectPhoto {
+.projectPhoto {
     height: 150px;
     margin: 5px;
 }
