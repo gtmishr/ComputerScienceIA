@@ -56,9 +56,12 @@
 
 table {
     border: 1px solid black;
-    display: inherit;
     border-collapse: collapse;
     overflow: auto;
+}
+
+.projectTable {
+    display = none;
 }
 
 th:hover, td:hover {
