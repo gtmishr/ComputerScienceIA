@@ -19,7 +19,7 @@ function searchBar() {
 }
 
 function createNewButton() {
-  console.log("this is cool");
+    request.send();
 }
 
 var isProjectExpandedArray = [false, false]
@@ -41,3 +41,12 @@ function expandProject(projectNumber) {
   }
 
 }
+
+var request = new XMLHttpRequest()
+request.open('GET', 'http://localhost:8080/api/contractor', false)
+
+request.onload = () => {
+    var data = JSON.parse(request.response)
+    console.log(data);
+}
+

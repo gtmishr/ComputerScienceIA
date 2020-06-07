@@ -1,5 +1,5 @@
 * {
-    font-family: 'Merriweather', serif;
+    font-family: 'Roboto', serif;
     text-align: center;
 }
 
@@ -57,7 +57,8 @@
 table {
     border: 1px solid black;
     border-collapse: collapse;
-    overflow: auto;
+    overflow: none;
+    display: none;
 }
 
 .projectTable {
@@ -72,15 +73,15 @@ th, td {
     border: 1px solid black;
 }
 
-#buildingProjectTitle, #buildingDescription, #projectPhoto {
+.buildingProjectTitle, .buildingDescription, .projectPhoto {
     margin: 10px;
 }
 
-#buildingProjectTitle {
+.buildingProjectTitle {
     font-size: 14px;
 }
 
-#projectPhoto {
-    height: 150px;
+.projectPhoto {
+    height: 250px;
     margin: 5px;
 }
