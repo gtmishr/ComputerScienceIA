@@ -50,7 +50,7 @@ function deleteProject() {
 
     var projectIDInputToDelete = document.getElementById("projectIDInputToDelete").value;
 
-    console.log([projectIDInputToDelete]);
+    console.log(projectIDInputToDelete);
 
     var deleteProjectRequest = new XMLHttpRequest();
     deleteProjectRequest.open('DELETE', 'http://localhost:8080/api/project/ ' + projectIDInputToDelete, true);
@@ -95,7 +95,22 @@ function createNewContractor() {
 }
 
 // TO COMPLETE
-function deleteContractor() {}
+function deleteContractor() {
+
+    var contractorLicenceID = document.getElementById("contractorLicenceIDToDelete").value;
+
+    console.log(contractorLicenceID);
+
+    var deleteContractorRequest = new XMLHttpRequest();
+    deleteContractorRequest.open('DELETE', 'http://localhost:8080/api/contractor/ ' + contractorLicenceID, true);
+    deleteContractorRequest.send(contractorLicenceIDToDelete);
+
+    deleteContractorRequest.onreadystatechange = function() {
+        if (this.readyState == XMLHttpRequest.DONE && this.status === 200) {
+            console.log("deleteContractorRequest successfully completed.");
+        }
+    }
+}
 
 var isProjectExpandedArray = [false, false]
 
