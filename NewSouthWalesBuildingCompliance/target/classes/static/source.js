@@ -63,7 +63,6 @@ function deleteProject() {
     }
 }
 
-// TO COMPLETE
 function createNewContractor() {
 
     var contractorLicenceID = document.getElementById("contractorLicenceID").value;
