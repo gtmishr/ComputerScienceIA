@@ -64,7 +64,36 @@ function deleteProject() {
 }
 
 // TO COMPLETE
-function createNewContractor() {}
+function createNewContractor() {
+
+    var contractorLicenceID = document.getElementById("contractorLicenceID").value;
+    var contractorLicenceNumber = document.getElementById("contractorLicenceNumber").value; 
+    var contractorBusinessNames = document.getElementById("contractorBusinessNames").value;
+    var contractorCategories = document.getElementById("contractorCategories").value;
+    var contractorClasses = document.getElementById("contractorClasses").value;
+    var contractorLicenceName = document.getElementById("contractorLicenceName").value;
+    var contractorLicenceType = document.getElementById("contractorLicenceType").value;
+    var contractorLicensee = document.getElementById("contractorLicensee").value;
+    var contractorPostcode = document.getElementById("contractorPostcode").value;
+    var contractorStatus = document.getElementById("contractorStatus").value;
+    var contractorSuburb = document.getElementById("contractorSuburb").value;
+
+    var rawContractorInput = {licenceID: contractorSuburb, licenceNumber: contractorLicenceNumber, businessNames: contractorBusinessNames, categories: contractorCategories, classes: contractorClasses, licenceName: contractorLicenceName, licenceType: contractorLicenceType, licensee: contractorLicensee, postcode: contractorPostcode, status: contractorStatus, suburb: contractorSuburb};
+    var inputContractorParsed = JSON.stringify(rawContractorInput);
+    
+    var postContractorRequest = new XMLHttpRequest();
+    postContractorRequest.open('POST', 'http://localhost:8080/api/contractor', true);
+
+    postContractorRequest.setRequestHeader("Content-Type", 'application/json');
+    postContractorRequest.send(inputContractorParsed);
+
+    postContractorRequest.onreadystatechange = function() {
+        if (this.readyState == XMLHttpRequest.DONE && this.status === 200) {
+            console.log("postContractorRequest successfully completed.");
+        }
+    }
+    
+}
 
 // TO COMPLETE
 function deleteContractor() {}
