@@ -31,7 +31,11 @@ function createNewButton() {
     
     console.log(inputProjectParsed);
     
-//    request.send();
+    var postProjectRequest = new XMLHttpRequest()
+    postProjectRequest.open('POST', 'http://localhost:8080/api/project', true)
+    
+    postProjectRequest.send(inputProjectParsed);
+    
 }
 
 var isProjectExpandedArray = [false, false]
@@ -54,11 +58,11 @@ function expandProject(projectNumber) {
 
 }
 
-var request = new XMLHttpRequest()
-request.open('GET', 'http://localhost:8080/api/contractor', false)
+var getContractorRequest = new XMLHttpRequest()
+getContractorRequest.open('GET', 'http://localhost:8080/api/contractor', true)
 
-request.onload = () => {
-    var data = JSON.parse(request.response)
+getContractorRequest.onload = () => {
+    var data = JSON.parse(getContractorRequest.response)
     console.log(data);
 }
 

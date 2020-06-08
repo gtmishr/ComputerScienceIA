@@ -20,15 +20,22 @@ function searchBar() {
 
 function createNewButton() {
 
-    var projectID = document.getElementById("projectIDInput").value;
-    var clientName = document.getElementById("clientNameInput").value;
-    var streetAddress = document.getElementById("streetAddressInput").value;
-    var suburb = document.getElementById("suburbInput").value;
-    var description = document.getElementById("descriptionInput").value;
+    var projectIDInput = document.getElementById("projectIDInput").value;
+    var clientNameInput = document.getElementById("clientNameInput").value;
+    var streetAddressInput = document.getElementById("streetAddressInput").value;
+    var suburbInput = document.getElementById("suburbInput").value;
+    var descriptionInput = document.getElementById("descriptionInput").value;
 
-    console.log(projectID);
-
-//    request.send();
+    var rawProjectInput = '[ {"projectID": ' + projectIDInput + ', "clientName": ' + clientNameInput + ', "streetAddress": ' + streetAddressInput + ', "suburb": ' + suburbInput + ', "description": ' + descriptionInput +'} ]';
+    var inputProjectParsed = JSON.parse(rawProjectInput);
+    
+    console.log(inputProjectParsed);
+    
+    var postProjectRequest = new XMLHttpRequest()
+    postProjectRequest.open('POST', 'http://localhost:8080/api/project', true)
+    
+    postProjectRequest.send(inputProjectParsed);
+    
 }
 
 var isProjectExpandedArray = [false, false]
@@ -51,11 +58,11 @@ function expandProject(projectNumber) {
 
 }
 
-var request = new XMLHttpRequest()
-request.open('GET', 'http://localhost:8080/api/contractor', false)
+var getContractorRequest = new XMLHttpRequest()
+getContractorRequest.open('GET', 'http://localhost:8080/api/contractor', true)
 
-request.onload = () => {
-    var data = JSON.parse(request.response)
+getContractorRequest.onload = () => {
+    var data = JSON.parse(getContractorRequest.response)
     console.log(data);
 }
 
