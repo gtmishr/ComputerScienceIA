@@ -19,7 +19,16 @@ function searchBar() {
 }
 
 function createNewButton() {
-    request.send();
+
+    var projectID = document.getElementById("projectIDInput").value;
+    var clientName = document.getElementById("clientNameInput").value;
+    var streetAddress = document.getElementById("streetAddressInput").value;
+    var suburb = document.getElementById("suburbInput").value;
+    var description = document.getElementById("descriptionInput").value;
+
+    console.log(projectID);
+
+//    request.send();
 }
 
 var isProjectExpandedArray = [false, false]

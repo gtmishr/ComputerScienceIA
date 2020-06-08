@@ -9,14 +9,22 @@
 
   <body>
     <script type = "text/javascript" src = "source.js"></script>
-    <script type="text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type = "text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 
     <h1 id = "mainHeader">New South Wales Building Compliance</h1>
     <p id = "introductionSentence">This is the New South Wales Building Compliance website, or the NSW BC. Click the new button below to start a new building project.</p>
 
     <input type = "text" id = "searchBar" onkeyup = "searchBar()" placeholder = "Search for an address, description, image file, or other..." title = "Search projects">
 
-    <button id = "newProjectButton" onclick = "createNewButton()">Create a new project</button>
+    <div id = "projectCreation">
+        <input id = "projectIDInput" placeholder = "Add project ID..." type = "text" title = "ProjectID Input">
+        <input id = "clientNameInput" placeholder = "Add the client's name for the project..." type = "text" title = "Client Name Input">
+        <input id = "streetAddressInput" placeholder = "Add the street address of the project..." type = "text" title = "Street Address Input">
+        <input id = "suburbInput" placeholder = "Add the suburb of the project..." type = "text" title = "Suburb Input">
+        <input id = "descriptionInput" placeholder = "Add a description of the project..." type = "text" title = "Description Input">
+
+        <button id = "newProjectButton" onclick = "createNewButton()">Create a new project</button>
+    </div>
 
     <ul id = "searchMenu">
 
