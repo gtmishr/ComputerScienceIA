@@ -19,6 +19,11 @@ function searchBar() {
 }
 
 function createNewButton() {
+    createNewProject();
+    // Implement write to file
+}
+
+function createNewProject() {
 
     var projectIDInput = document.getElementById("projectIDInput").value;
     var clientNameInput = document.getElementById("clientNameInput").value;
@@ -28,12 +33,12 @@ function createNewButton() {
 
     var rawProjectInput = {projectID: projectIDInput, clientName: clientNameInput, streetAddress: streetAddressInput, suburb: suburbInput, description: descriptionInput};
     var inputProjectParsed = JSON.stringify(rawProjectInput);
-    
+
     console.log(inputProjectParsed);
-    
+
     var postProjectRequest = new XMLHttpRequest();
     postProjectRequest.open('POST', 'http://localhost:8080/api/project', true);
-    
+
     postProjectRequest.setRequestHeader("Content-Type", 'application/json');
     postProjectRequest.send(inputProjectParsed);
 
