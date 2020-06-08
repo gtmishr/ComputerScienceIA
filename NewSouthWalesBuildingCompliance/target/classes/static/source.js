@@ -18,11 +18,6 @@ function searchBar() {
 
 }
 
-function createNewButton() {
-    createNewProject();
-    // Implement write to file
-}
-
 function createNewProject() {
 
     var projectIDInput = document.getElementById("projectIDInput").value;
@@ -50,6 +45,30 @@ function createNewProject() {
 
 }
 
+// DOESN'T CURRENTLY WORK
+function deleteProject() {
+
+    var projectIDInputToDelete = document.getElementById("projectIDInputToDelete").value;
+
+    console.log([projectIDInputToDelete]);
+
+    var deleteProjectRequest = new XMLHttpRequest();
+    deleteProjectRequest.open('DELETE', 'http://localhost:8080/api/project/ ' + projectIDInputToDelete, true);
+    deleteProjectRequest.send(projectIDInputToDelete);
+
+    deleteProjectRequest.onreadystatechange = function() {
+        if (this.readyState == XMLHttpRequest.DONE && this.status === 200) {
+            console.log("deleteProjectRequest successfully completed.");
+        }
+    }
+}
+
+// TO COMPLETE
+function createNewContractor() {}
+
+// TO COMPLETE
+function deleteContractor() {}
+
 var isProjectExpandedArray = [false, false]
 
 function expandProject(projectNumber) {
@@ -75,7 +94,7 @@ getContractorRequest.open('GET', 'http://localhost:8080/api/contractor', true);
 
 getContractorRequest.onload = () => {
     var getContractorData = JSON.parse(getContractorRequest.response);
-    console.log(getContractorData);
     console.log("getContractorRequest successfully completed.");
 }
 
+// getContractorRequest.send();

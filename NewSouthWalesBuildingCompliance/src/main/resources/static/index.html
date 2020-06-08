@@ -16,6 +16,8 @@
 
     <input type = "text" id = "searchBar" onkeyup = "searchBar()" placeholder = "Search for an address, description, image file, or other..." title = "Search projects">
 
+    <br>
+
     <div id = "projectCreation">
         <input id = "projectIDInput" placeholder = "Add project ID..." type = "text" title = "ProjectID Input">
         <input id = "clientNameInput" placeholder = "Add the client's name for the project..." type = "text" title = "Client Name Input">
@@ -23,8 +25,10 @@
         <input id = "suburbInput" placeholder = "Add the suburb of the project..." type = "text" title = "Suburb Input">
         <input id = "descriptionInput" placeholder = "Add a description of the project..." type = "text" title = "Description Input">
 
-        <button id = "newProjectButton" onclick = "createNewButton()">Create a new project</button>
+        <button id = "newProjectButton" onclick = "createNewProject()">Create a new project</button>
     </div>
+
+    <br>
 
     <ul id = "searchMenu">
 
@@ -153,6 +157,38 @@
         </a> </li>
 
     </ul>
+
+    <br>
+
+    <div id = "projectDelete">
+        <input id = "projectIDInputToDelete" placeholder = "Add project ID of item to delete..." type = "text" title = "ProjectID Input To Delete">
+        <button id = "deleteProjectButton" onclick = "deleteProject()">Delete project</button>
+    </div>
+
+    <br>
+
+    <div id = "contractorAdd">
+        <input id = "contractorLicenceID" placeholder = "Add a contractor's Licence ID..." type = "text" title = "LicenceID Input">
+        <input id = "contractorLicenceNumber" placeholder = "Add a contractor's Licence Number..." type = "text" title = "Licence Number Input">
+        <input id = "contractorBusinessNames" placeholder = "Add a contractor's Business Names..." type = "text" title = "Business Names Input">
+        <input id = "contractorCategories" placeholder = "Add a contractor's Categories..." type = "text" title = "Categories Input">
+        <input id = "contractorClasses" placeholder = "Add a contractor's Classes..." type = "text" title = "Classes Input">
+        <input id = "contractorLicenceName" placeholder = "Add a contractor's Licence Name..." type = "text" title = "Licence Name Input">
+        <input id = "contractorLicenceType" placeholder = "Add a contractor's Licence Type..." type = "text" title = "Licence Type Input">
+        <input id = "contractorLicensee" placeholder = "Add a contractor's Licensee..." type = "text" title = "Licensee Input">
+        <input id = "contractorPostcode" placeholder = "Add a contractor's Postcode..." type = "text" title = "Postcode Input">
+        <input id = "contractorStatus" placeholder = "Add a contractor's Status..." type = "text" title = "Status Input">
+        <input id = "contractorSuburb" placeholder = "Add a contractor's Suburb..." type = "text" title = "Suburb Input">
+
+        <button id = "newContractorButton" onclick = "createNewContractor()">Create a new contractor</button>
+    </div>
+
+    <br>
+
+    <div id = "contractorDelete">
+        <input id = "contractorLicenceIDToDelete" placeholder = "Add the contractor's licence ID to delete..." type = "text" title = "Contractor LicenceID Input To Delete">
+        <button id = "deleteContractorButton" onclick = "deleteContractor()">Delete contractor</button>
+    </div>
 
     </body>
 
