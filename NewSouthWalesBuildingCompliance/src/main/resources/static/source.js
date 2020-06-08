@@ -75,7 +75,7 @@ getContractorRequest.open('GET', 'http://localhost:8080/api/contractor', true);
 
 getContractorRequest.onload = () => {
     var getContractorData = JSON.parse(getContractorRequest.response);
-    console.log(getContractorData);
     console.log("getContractorRequest successfully completed.");
 }
 
+// getContractorRequest.send();
