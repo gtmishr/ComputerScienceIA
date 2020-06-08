@@ -39,7 +39,7 @@ function createNewButton() {
 
     postProjectRequest.onreadystatechange = function() {
         if (this.readyState == XMLHttpRequest.DONE && this.status === 200) {
-            console.log("POST request successfully completed.");
+            console.log("postProjectRequest successfully completed.");
         }
     }
 
@@ -69,7 +69,8 @@ var getContractorRequest = new XMLHttpRequest();
 getContractorRequest.open('GET', 'http://localhost:8080/api/contractor', true);
 
 getContractorRequest.onload = () => {
-    var data = JSON.parse(getContractorRequest.response);
-    console.log(data);
+    var getContractorData = JSON.parse(getContractorRequest.response);
+    console.log(getContractorData);
+    console.log("getContractorRequest successfully completed.");
 }
 
