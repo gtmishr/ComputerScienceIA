@@ -20,14 +20,17 @@ function searchBar() {
 
 function createNewButton() {
 
-    var projectID = document.getElementById("projectIDInput").value;
-    var clientName = document.getElementById("clientNameInput").value;
-    var streetAddress = document.getElementById("streetAddressInput").value;
-    var suburb = document.getElementById("suburbInput").value;
-    var description = document.getElementById("descriptionInput").value;
+    var projectIDInput = document.getElementById("projectIDInput").value;
+    var clientNameInput = document.getElementById("clientNameInput").value;
+    var streetAddressInput = document.getElementById("streetAddressInput").value;
+    var suburbInput = document.getElementById("suburbInput").value;
+    var descriptionInput = document.getElementById("descriptionInput").value;
 
-    console.log(projectID);
-
+    var rawProjectInput = '[ {"projectID": ' + projectIDInput + ', "clientName": ' + clientNameInput + ', "streetAddress": ' + streetAddressInput + ', "suburb": ' + suburbInput + ', "description": ' + descriptionInput +'} ]';
+    var inputProjectParsed = JSON.parse(rawProjectInput);
+    
+    console.log(inputProjectParsed);
+    
 //    request.send();
 }
 
