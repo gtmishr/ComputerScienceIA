@@ -77,7 +77,7 @@ function createNewContractor() {
     var contractorStatus = document.getElementById("contractorStatus").value;
     var contractorSuburb = document.getElementById("contractorSuburb").value;
 
-    var rawContractorInput = {licenceID: contractorSuburb, licenceNumber: contractorLicenceNumber, businessNames: contractorBusinessNames, categories: contractorCategories, classes: contractorClasses, licenceName: contractorLicenceName, licenceType: contractorLicenceType, licensee: contractorLicensee, postcode: contractorPostcode, status: contractorStatus, suburb: contractorSuburb};
+    var rawContractorInput = {licenceID: contractorLicenceID, licenceNumber: contractorLicenceNumber, businessNames: contractorBusinessNames, categories: contractorCategories, classes: contractorClasses, licenceName: contractorLicenceName, licenceType: contractorLicenceType, licensee: contractorLicensee, postcode: contractorPostcode, status: contractorStatus, suburb: contractorSuburb};
     var inputContractorParsed = JSON.stringify(rawContractorInput);
     
     var postContractorRequest = new XMLHttpRequest();

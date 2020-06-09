@@ -50,7 +50,7 @@ function deleteProject() {
 
     var projectIDInputToDelete = document.getElementById("projectIDInputToDelete").value;
 
-    console.log(projectIDInputToDelete);
+//    console.log(projectIDInputToDelete);
 
     var deleteProjectRequest = new XMLHttpRequest();
     deleteProjectRequest.open('DELETE', 'http://localhost:8080/api/project/ ' + projectIDInputToDelete, true);
@@ -77,7 +77,7 @@ function createNewContractor() {
     var contractorStatus = document.getElementById("contractorStatus").value;
     var contractorSuburb = document.getElementById("contractorSuburb").value;
 
-    var rawContractorInput = {licenceID: contractorSuburb, licenceNumber: contractorLicenceNumber, businessNames: contractorBusinessNames, categories: contractorCategories, classes: contractorClasses, licenceName: contractorLicenceName, licenceType: contractorLicenceType, licensee: contractorLicensee, postcode: contractorPostcode, status: contractorStatus, suburb: contractorSuburb};
+    var rawContractorInput = {licenceID: contractorLicenceID, licenceNumber: contractorLicenceNumber, businessNames: contractorBusinessNames, categories: contractorCategories, classes: contractorClasses, licenceName: contractorLicenceName, licenceType: contractorLicenceType, licensee: contractorLicensee, postcode: contractorPostcode, status: contractorStatus, suburb: contractorSuburb};
     var inputContractorParsed = JSON.stringify(rawContractorInput);
     
     var postContractorRequest = new XMLHttpRequest();
@@ -94,12 +94,12 @@ function createNewContractor() {
     
 }
 
-// TO COMPLETE
+// DOESN'T CURRENTLY WORK
 function deleteContractor() {
 
     var contractorLicenceID = document.getElementById("contractorLicenceIDToDelete").value;
 
-    console.log(contractorLicenceID);
+//    console.log(contractorLicenceID);
 
     var deleteContractorRequest = new XMLHttpRequest();
     deleteContractorRequest.open('DELETE', 'http://localhost:8080/api/contractor/ ' + contractorLicenceID, true);
