@@ -43,6 +43,12 @@ function createNewProject() {
         }
     }
 
+    createNewButtonHTML(postProjectRequest);
+
+}
+
+function createNewButtonHTML(postProjectRequest) {
+    document.write("Something is being written" + postProjectRequest);
 }
 
 // DOESN'T CURRENTLY WORK

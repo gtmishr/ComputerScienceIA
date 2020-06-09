@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 @RequestMapping("api/project")
@@ -19,9 +22,22 @@ public class ProjectController {
         this.projectService = projectService;
     }
 
+    // WRITING TO BE FIXED
     @PostMapping
     public void addProject(@NonNull @RequestBody Project project) {
         projectService.addProject(project);
+
+        try {
+
+            FileWriter fileWriter = new FileWriter("data.json");
+            PrintWriter printWriter = new PrintWriter("data.json");
+            printWriter.print("{projectID: project.getProjectID(), clientName: project.getClientName(), streetAddress: streetAddressInput, suburb: suburbInput, description: descriptionInput};");
+            printWriter.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     @GetMapping

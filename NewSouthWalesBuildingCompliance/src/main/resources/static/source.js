@@ -43,6 +43,8 @@ function createNewProject() {
         }
     }
 
+    createNewButtonHTML(postProjectRequest);
+
 }
 
 // DOESN'T CURRENTLY WORK
