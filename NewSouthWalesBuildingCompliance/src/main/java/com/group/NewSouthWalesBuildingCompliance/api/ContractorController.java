@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 @RequestMapping("api/contractor")
@@ -22,6 +25,15 @@ public class ContractorController {
     @PostMapping
     public void addContractor(@NonNull @RequestBody Contractor contractor) {
         contractorService.addContractor(contractor);
+
+        try {
+            FileWriter fileWriter = new FileWriter("data.json");
+            PrintWriter printWriter = new PrintWriter("data.json");
+            printWriter.print("{'licenceID': '" + contractor.getLicenceID() +"', 'licenceNumber': '" + contractor.getLicenceNumber() +"', 'businessNames': '" + contractor.getBusinessNames() +"', 'categories': '" + contractor.getCategories() + "', 'classes': '" + contractor.getClasses() +"' , 'licenceName': '" + contractor.getLicenceName() +"', 'licenceType': '" + contractor.getLicenceType() +"', 'licensee': '" + contractor.getLicensee() +"', 'postcode': '" + contractor.getPostcode() +"', 'status': '" + contractor.getStatus() +"', 'suburb': '" + contractor.getSuburb() +"'};");
+            printWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @GetMapping

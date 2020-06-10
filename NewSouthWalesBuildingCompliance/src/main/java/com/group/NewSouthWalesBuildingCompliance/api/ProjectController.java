@@ -22,18 +22,15 @@ public class ProjectController {
         this.projectService = projectService;
     }
 
-    // WRITING TO BE FIXED
     @PostMapping
     public void addProject(@NonNull @RequestBody Project project) {
         projectService.addProject(project);
 
         try {
-
             FileWriter fileWriter = new FileWriter("data.json");
             PrintWriter printWriter = new PrintWriter("data.json");
-            printWriter.print("{projectID: project.getProjectID(), clientName: project.getClientName(), streetAddress: streetAddressInput, suburb: suburbInput, description: descriptionInput};");
+            printWriter.print("{'projectID': '" + project.getProjectID() +"', 'clientName': '" + project.getClientName() +"', 'streetAddress': '" + project.getStreetAddress() +"', 'suburb': '" + project.getSuburb() + "', 'description': '" + project.getDescription() +"'};");
             printWriter.close();
-
         } catch (IOException e) {
             e.printStackTrace();
         }
