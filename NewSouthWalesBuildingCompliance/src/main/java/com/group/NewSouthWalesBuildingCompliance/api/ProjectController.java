@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -23,18 +24,15 @@ public class ProjectController {
     }
 
     @PostMapping
-    public void addProject(@NonNull @RequestBody Project project) {
+    public void addProject(@NonNull @RequestBody Project project) throws IOException {
         projectService.addProject(project);
 
-        try {
-            FileWriter fileWriter = new FileWriter("data.json");
-            PrintWriter printWriter = new PrintWriter("data.json");
-            printWriter.print("{'projectID': '" + project.getProjectID() +"', 'clientName': '" + project.getClientName() +"', 'streetAddress': '" + project.getStreetAddress() +"', 'suburb': '" + project.getSuburb() + "', 'description': '" + project.getDescription() +"'};");
-            printWriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        File projectData = new File("projectData.json");
+        FileWriter projectFileWriter = new FileWriter(projectData, true);
+        PrintWriter projectPrintWriter = new PrintWriter(projectFileWriter);
 
+        projectPrintWriter.println("{\"projectID\": \"" + project.getProjectID() + "\", \"clientName\": \"" + project.getClientName() + "\", \"streetAddress\": \"" + project.getStreetAddress() + "\", \"suburb\": \"" + project.getSuburb() + "\", \"description\": \"" + project.getDescription() +"\"}");
+        projectPrintWriter.close();
     }
 
     @GetMapping

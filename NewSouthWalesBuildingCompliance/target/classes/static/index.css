@@ -3,12 +3,6 @@
     text-align: center;
 }
 
-input:visited, input:active, input:focus {
-    outline: none;
-    box-shadow: none;
-    -moz-outline-style: none;
-}
-
 #mainHeader, #introductionSentence {
     text-align: center;
     margin-left: 15px;
