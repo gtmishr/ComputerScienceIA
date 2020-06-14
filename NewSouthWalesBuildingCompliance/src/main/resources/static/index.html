@@ -33,35 +33,30 @@
     <ul id = "searchMenu">
 
         <li> <a href = "#">
-              <button class = "testProject" id = "project1" onclick = "expandProject(1)">
+              <button class = "project" id = "project0" onclick = "expandProject(0)">
 
-                    <h3 class = "buildingProjectTitle">27 Gladys-Lister Street, Harrison</h3>
-                    <img class = "projectPhoto" src = "images/sampleHouse.jpg"  alt = "Sample Photo">
-                    <p class = "buildingDescription">This is some text that may be used as a description for a building website, but this one is mostly normal. I'm just adding more and more text to allow for me to test if we can actually set a fixed width and height for these buttons.</p>
+                    <h3 class = "buildingProjectTitle">Project Title</h3>
+                    <p class = "buildingDescription">Building Description</p>
 
-                    <table class = "projectTable" id = "project1TodoItemsTable">
+                    <table class = "projectTable" id = "project0TodoItemsTable">
                         <caption>Project Properties</caption>
                         <tr>
                             <th>Client Name</th>
                             <th>Street Address</th>
                             <th>Suburb</th>
                             <th>Description</th>
-                            <th>Photo Address</th>
                             <th>Contractor List</th>
-                            <th>To-do List</th>
                         </tr>
                         <tr>
-                            <td>Sunil Tewari</td>
-                            <td>27 Gladys-Lister Street</td>
-                            <td>Harrison</td>
-                            <td>Five bedroom, three bathroom, double garage, rendered front</td>
-                            <td>../images/sampleHouse.jpg</td>
-                            <td>List to come...</td>
-                            <td>List to come...</td>
+                            <td>[CLIENT NAME]</td>
+                            <td>[CLIENT ADDRESS]</td>
+                            <td>[CLIENT SUBURB]</td>
+                            <td>[CLIENT DESCRIPTION]</td>
+                            <td>[CONTRACTOR LIST]</td>
                         </tr>
                     </table>
 
-                  <table class = "projectTable" id = "project1ContractorTable">
+                  <table class = "projectTable" id = "projectTemplateContractorTable">
                       <caption>Contractors used for this project</caption>
                       <tr>
                           <th>Licence ID</th>
@@ -77,83 +72,21 @@
                           <th>Suburb</th>
                       </tr>
                       <tr>
-                          <td>Sunil Tewari</td>
-                          <td>27 Gladys-Lister Street</td>
-                          <td>Harrison</td>
-                          <td>Five bedroom, two bathroom, one ensuite, double garage, rendered front</td>
-                          <td>../images/sampleHouse.jpg</td>
-                          <td>List to come...</td>
-                          <td>List to come...</td>
-                          <td>List to come...</td>
-                          <td>List to come...</td>
-                          <td>List to come...</td>
-                          <td>List to come...</td>
+                          <td>[LICENCE ID]</td>
+                          <td>[LICENCE NUMBER]</td>
+                          <td>[BUSINESS NAMES]</td>
+                          <td>[CATEGORIES]</td>
+                          <td>[CLASSES]</td>
+                          <td>[LICENCE NAME]</td>
+                          <td>[LICENCE TYPE]</td>
+                          <td>[LICENSEE]</td>
+                          <td>[POSTCODE]</td>
+                          <td>[STATUS]</td>
+                          <td>[SUBURB]</td>
                       </tr>
                   </table>
 
                 </button>
-        </a> </li>
-
-        <li> <a href = "#">
-          <button class = "testProject" id = "project2" onclick = "expandProject(2)">
-
-                <h3 id = "buildingProjectTitle">18 Trumble Street, Pearce</h3>
-                <img class = "projectPhoto" src = "images/sampleHouse.jpg" alt = "Sample Photo">
-                <p id = "buildingDescription">This is some text that may be used as a description for a building website, but this one is just slightly different. I'm just adding more and more text to allow for me to test if we can actually set a fixed width and height for these buttons.</p>
-
-                    <table class = "projectTable" id = "project2TodoItemsTable">
-                        <caption>Project Properties</caption>
-                        <tr>
-                            <th>Client Name</th>
-                            <th>Street Address</th>
-                            <th>Suburb</th>
-                            <th>Description</th>
-                            <th>Photo Address</th>
-                            <th>Contractor List</th>
-                            <th>To-do List</th>
-                        </tr>
-                        <tr>
-                            <td>Rajesh Mishra</td>
-                            <td>18 Trumble Street</td>
-                            <td>Pearce</td>
-                            <td>Five bedroom, two bathroom, one ensuite, double garage, rendered front</td>
-                            <td>../images/sampleHouse.jpg</td>
-                            <td>List to come...</td>
-                            <td>List to come...</td>
-                        </tr>
-                    </table>
-
-                  <table class = "projectTable" id = "project2ContractorTable">
-                      <caption>Contractors used for this project</caption>
-                      <tr>
-                          <th>Licence ID</th>
-                          <th>Licence Number</th>
-                          <th>Business Names</th>
-                          <th>Categories</th>
-                          <th>Classes</th>
-                          <th>Licence Name</th>
-                          <th>Licence Type</th>
-                          <th>Licensee</th>
-                          <th>Postcode</th>
-                          <th>Status</th>
-                          <th>Suburb</th>
-                      </tr>
-                      <tr>
-                          <td>Rajesh Mishra</td>
-                          <td>18 Trumble Street</td>
-                          <td>Pearce</td>
-                          <td>Five bedroom, two bathroom, one ensuite, double garage, rendered front</td>
-                          <td>../images/sampleHouse.jpg</td>
-                          <td>List to come...</td>
-                          <td>List to come...</td>
-                          <td>List to come...</td>
-                          <td>List to come...</td>
-                          <td>List to come...</td>
-                          <td>List to come...</td>
-                      </tr>
-                  </table>
-
-            </button>
         </a> </li>
 
     </ul>

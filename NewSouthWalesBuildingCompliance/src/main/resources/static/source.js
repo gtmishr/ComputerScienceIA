@@ -1,3 +1,5 @@
+var isProjectExpandedArray = [false]
+
 function searchBar() {
 
   var query = document.getElementById("searchBar").value.toUpperCase();
@@ -44,6 +46,12 @@ function createNewProject() {
     }
 
     createNewButtonHTML(postProjectRequest);
+
+    var templateButtonQuery = document.querySelector("#project0");
+    var templateButtonClone = templateButtonQuery.cloneNode(true);
+    isProjectExpandedArray.push(false);
+
+    templateButtonClone.id = "project" + isProjectExpandedArray.length +;
 
 }
 
@@ -114,22 +122,20 @@ function deleteContractor() {
     }
 }
 
-var isProjectExpandedArray = [false, false]
-
 function expandProject(projectNumber) {
 
-  if (isProjectExpandedArray[projectNumber - 1] == false) {
+  if (isProjectExpandedArray[projectNumber] == false) {
     document.getElementById("project" + projectNumber).style.height = "900px";
     document.getElementById("project" + projectNumber).style.width = "900px";
     document.getElementById("project" + projectNumber + "TodoItemsTable").style.display = "inherit";
     document.getElementById("project" + projectNumber + "ContractorTable").style.display = "inherit";
-    isProjectExpandedArray[projectNumber - 1] = true;
+    isProjectExpandedArray[projectNumber] = true;
   } else {
     document.getElementById("project" + projectNumber).style.height = "500px";
     document.getElementById("project" + projectNumber).style.width = "400px";
     document.getElementById("project" + projectNumber + "TodoItemsTable").style.display = "none";
     document.getElementById("project" + projectNumber + "ContractorTable").style.display = "none";
-    isProjectExpandedArray[projectNumber - 1] = false;
+    isProjectExpandedArray[projectNumber] = false;
   }
 
 }
@@ -141,5 +147,3 @@ getContractorRequest.onload = () => {
     var getContractorData = JSON.parse(getContractorRequest.response);
     console.log("getContractorRequest successfully completed.");
 }
-
-// getContractorRequest.send();
