@@ -45,13 +45,11 @@ function createNewProject() {
         }
     }
 
-    createNewButtonHTML(postProjectRequest);
-
     var templateButtonQuery = document.querySelector("#project0");
     var templateButtonClone = templateButtonQuery.cloneNode(true);
     isProjectExpandedArray.push(false);
 
-    templateButtonClone.id = "project" + isProjectExpandedArray.length +;
+    templateButtonClone.id = "project" + isProjectExpandedArray.length;
 
 }
 
