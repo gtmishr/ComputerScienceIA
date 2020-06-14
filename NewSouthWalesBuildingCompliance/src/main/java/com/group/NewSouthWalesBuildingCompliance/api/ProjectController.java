@@ -26,7 +26,7 @@ public class ProjectController {
     public void addProject(@NonNull @RequestBody Project project) throws IOException {
         projectService.addProject(project);
 
-        File projectData = new File("projectData.json");
+        File projectData = new File("projectData.txt");
         FileWriter projectFileWriter = new FileWriter(projectData, true);
         PrintWriter projectPrintWriter = new PrintWriter(projectFileWriter);
 
@@ -49,8 +49,8 @@ public class ProjectController {
     public void deleteProjectByID(@PathVariable("ID") String projectID) throws IOException {
         projectService.deleteProject(projectID);
 
-        File inputFile = new File("projectData.json");
-        File temporaryFile = new File("temporaryProjectFile.json");
+        File inputFile = new File("projectData.txt");
+        File temporaryFile = new File("temporaryProjectFile.txt");
 
         BufferedReader reader = new BufferedReader(new FileReader(inputFile));
         BufferedWriter writer = new BufferedWriter(new FileWriter(temporaryFile));

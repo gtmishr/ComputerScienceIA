@@ -25,7 +25,7 @@ public class ContractorController {
     public void addContractor(@NonNull @RequestBody Contractor contractor) throws IOException {
         contractorService.addContractor(contractor);
 
-        File contractorData = new File("contractorData.json");
+        File contractorData = new File("contractorData.txt");
         FileWriter contractorFileWriter = new FileWriter(contractorData, true);
         PrintWriter contractorPrintWriter = new PrintWriter(contractorFileWriter);
 
@@ -48,8 +48,8 @@ public class ContractorController {
     public void deleteContractorByID(@PathVariable("ID") String licenceID) throws IOException {
         contractorService.deleteContractor(licenceID);
 
-        File inputFile = new File("contractorData.json");
-        File temporaryFile = new File("temporaryContractorFile.json");
+        File inputFile = new File("contractorData.txt");
+        File temporaryFile = new File("temporaryContractorFile.txt");
 
         BufferedReader reader = new BufferedReader(new FileReader(inputFile));
         BufferedWriter writer = new BufferedWriter(new FileWriter(temporaryFile));
