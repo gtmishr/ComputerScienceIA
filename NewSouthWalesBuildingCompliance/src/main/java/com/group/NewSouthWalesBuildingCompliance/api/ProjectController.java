@@ -6,11 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.List;
+import org.json.JSONArray;
+
 
 @RequestMapping("api/project")
 @RestController
@@ -47,8 +46,28 @@ public class ProjectController {
     }
 
     @DeleteMapping(path = "{ID}")
-    public void deleteProjectByID(@PathVariable("ID") String projectID) {
+    public void deleteProjectByID(@PathVariable("ID") String projectID) throws IOException {
         projectService.deleteProject(projectID);
+
+        File inputFile = new File("projectData.json");
+        File temporaryFile = new File("temporaryProjectFile.json");
+
+        BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+        BufferedWriter writer = new BufferedWriter(new FileWriter(temporaryFile));
+
+        String currentLine = reader.readLine();
+
+        while ((currentLine = reader.readLine()) != null) {
+            String trimmedLine = currentLine.trim();
+            if (trimmedLine.contains(projectID)) continue;
+            writer.write(currentLine + System.getProperty("line.separator"));
+        }
+
+        writer.close();
+        reader.close();
+
+        boolean deleteSuccessful = temporaryFile.renameTo(inputFile);
+        writer.close();
     }
 
     @PutMapping(path = "{ID}")
