@@ -1,17 +1,21 @@
 var isProjectExpandedArray = [false]
 
 function readTextFile(file) {
+
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", file, false);
+
     rawFile.onreadystatechange = function () {
         if (rawFile.readyState === 4) {
             if (rawFile.status === 200 || rawFile.status == 0) {
                 var allText = rawFile.responseText;
-                alert(allText);
+                console.log(allText);
             }
         }
     }
+
     rawFile.send(null);
+
 }
 
 function searchBar() {
@@ -146,7 +150,9 @@ function expandProject(projectNumber) {
 
 }
 
-readTextFile("file://");
+// DOESN'T CURRENTLY WORK
+readTextFile("file:///Users/gautam/Documents/GitHub/NewSouthWalesBuildingCompliance/NewSouthWalesBuildingCompliance/contractorData.txt");
+readTextFile("file:///Users/gautam/Documents/GitHub/NewSouthWalesBuildingCompliance/NewSouthWalesBuildingCompliance/projectData.txt");
 
 var getContractorRequest = new XMLHttpRequest();
 getContractorRequest.open('GET', 'http://localhost:8080/api/contractor', true);
