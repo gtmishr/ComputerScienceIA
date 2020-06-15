@@ -98,7 +98,6 @@ function createNewContractor() {
     
 }
 
-// DOESN'T CURRENTLY WORK
 function deleteContractor() {
 
     var contractorLicenceIDToDelete = document.getElementById("contractorLicenceIDToDelete").value;
