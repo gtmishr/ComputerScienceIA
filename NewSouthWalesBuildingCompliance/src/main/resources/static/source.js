@@ -48,20 +48,15 @@ function createNewProject() {
     var templateButtonQuery = document.querySelector("#project0");
     var templateButtonClone = templateButtonQuery.cloneNode(true);
     isProjectExpandedArray.push(false);
-
     templateButtonClone.id = "project" + isProjectExpandedArray.length;
-
 }
 
-// DOESN'T CURRENTLY WORK
 function deleteProject() {
 
     var projectIDInputToDelete = document.getElementById("projectIDInputToDelete").value;
 
-//    console.log(projectIDInputToDelete);
-
     var deleteProjectRequest = new XMLHttpRequest();
-    deleteProjectRequest.open('DELETE', 'http://localhost:8080/api/project/ ' + projectIDInputToDelete, true);
+    deleteProjectRequest.open('DELETE', 'http://localhost:8080/api/project/' + projectIDInputToDelete);
     deleteProjectRequest.send(projectIDInputToDelete);
 
     deleteProjectRequest.onreadystatechange = function() {
@@ -69,6 +64,7 @@ function deleteProject() {
             console.log("deleteProjectRequest successfully completed.");
         }
     }
+
 }
 
 function createNewContractor() {
@@ -102,16 +98,14 @@ function createNewContractor() {
     
 }
 
-// DOESN'T CURRENTLY WORK
 function deleteContractor() {
 
-    var contractorLicenceID = document.getElementById("contractorLicenceIDToDelete").value;
-
-//    console.log(contractorLicenceID);
+    var contractorLicenceIDToDelete = document.getElementById("contractorLicenceIDToDelete").value;
 
     var deleteContractorRequest = new XMLHttpRequest();
-    deleteContractorRequest.open('DELETE', 'http://localhost:8080/api/contractor/ ' + contractorLicenceID, true);
+    deleteContractorRequest.open('DELETE', 'http://localhost:8080/api/contractor/' + contractorLicenceIDToDelete);
     deleteContractorRequest.send(contractorLicenceIDToDelete);
+    console.log(deleteContractorRequest);
 
     deleteContractorRequest.onreadystatechange = function() {
         if (this.readyState == XMLHttpRequest.DONE && this.status === 200) {
