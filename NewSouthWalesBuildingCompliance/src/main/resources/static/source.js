@@ -1,21 +1,8 @@
 var isProjectExpandedArray = [false]
 
-function readTextFile(file) {
-
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, false);
-
-    rawFile.onreadystatechange = function () {
-        if (rawFile.readyState === 4) {
-            if (rawFile.status === 200 || rawFile.status == 0) {
-                var allText = rawFile.responseText;
-                console.log(allText);
-            }
-        }
-    }
-
-    rawFile.send(null);
-
+// DOESN'T CURRENTLY WORK BUT IS CLOSE
+function addWrittenContractors() {
+    console.log(document.getElementById("inputFile"));
 }
 
 function searchBar() {
@@ -150,14 +137,14 @@ function expandProject(projectNumber) {
 
 }
 
-// DOESN'T CURRENTLY WORK
-readTextFile("file:///Users/gautam/Documents/GitHub/NewSouthWalesBuildingCompliance/NewSouthWalesBuildingCompliance/contractorData.txt");
-readTextFile("file:///Users/gautam/Documents/GitHub/NewSouthWalesBuildingCompliance/NewSouthWalesBuildingCompliance/projectData.txt");
+function getContractorRequest() {
 
-var getContractorRequest = new XMLHttpRequest();
-getContractorRequest.open('GET', 'http://localhost:8080/api/contractor', true);
+    var getContractorRequest = new XMLHttpRequest();
+    getContractorRequest.open('GET', 'http://localhost:8080/api/contractor', true);
 
-getContractorRequest.onload = () => {
-    var getContractorData = JSON.parse(getContractorRequest.response);
-    console.log("getContractorRequest successfully completed.");
+    getContractorRequest.onload = () => {
+        var getContractorData = JSON.parse(getContractorRequest.response);
+        console.log("getContractorRequest successfully completed.");
+    }
+
 }
