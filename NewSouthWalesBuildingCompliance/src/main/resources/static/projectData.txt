@@ -1,2 +1,2 @@
-{"projectID": "", "clientName": "", "streetAddress": "", "suburb": "", "description": ""}
-{"projectID": "", "clientName": "", "streetAddress": "", "suburb": "", "description": ""}
+{"projectID": "123", "clientName": "Joe Biden", "streetAddress": "18 Sample Street", "suburb": "Pearce", "description": "80% Complete"}
+{"projectID": "456", "clientName": "Donald Trump", "streetAddress": "6 Hawker Crescent", "suburb": "Harrison", "description": "Project pending approval"}

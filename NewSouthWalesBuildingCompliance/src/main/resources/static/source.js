@@ -3,36 +3,72 @@ var isProjectExpandedArray = [false]
 function addWrittenContractors(file) {
 
     var rawFile = new XMLHttpRequest();
+    var splitWritten = [];
+    
     rawFile.open("GET", file, false);
     rawFile.onreadystatechange = function () {
-        if (rawFile.readyState === 4)
-        {
-            if (rawFile.status === 200 || rawFile.status == 0)
-            {
+        if (rawFile.readyState === 4) {
+            if (rawFile.status === 200 || rawFile.status == 0) {
                 var allText = rawFile.responseText;
-                console.log(allText);
+                splitWritten = allText.split("\n");
+                console.log(splitWritten);
             }
         }
     }
+    
     rawFile.send(null);
+    
+    var i;
+    for (i = 0; i < splitWritten.length; i++) {
+        
+        var postContractorRequest = new XMLHttpRequest();
+        postContractorRequest.open('POST', 'http://localhost:8080/api/contractor', true);
+
+        postContractorRequest.setRequestHeader("Content-Type", 'application/json');
+        postContractorRequest.send(splitWritten[i]);
+
+        postContractorRequest.onreadystatechange = function() {
+            if (this.readyState == XMLHttpRequest.DONE && this.status === 200) {
+             console.log("postContractorRequest successfully completed.");
+            }
+        }     
+    }
 
 }
 
 function addWrittenProjects(file) {
 
     var rawFile = new XMLHttpRequest();
+    var splitWritten = [];
+    
     rawFile.open("GET", file, false);
     rawFile.onreadystatechange = function () {
-        if (rawFile.readyState === 4)
-        {
-            if (rawFile.status === 200 || rawFile.status == 0)
-            {
+        if (rawFile.readyState === 4) {
+            if (rawFile.status === 200 || rawFile.status == 0) {
                 var allText = rawFile.responseText;
-                console.log(allText);
+                splitWritten = allText.split("\n");
+                console.log(splitWritten);
             }
         }
     }
+    
     rawFile.send(null);
+    
+    var i;
+    for (i = 0; i < splitWritten.length; i++) {
+        
+        var postContractorRequest = new XMLHttpRequest();
+        postContractorRequest.open('POST', 'http://localhost:8080/api/project', true);
+
+        postContractorRequest.setRequestHeader("Content-Type", 'application/json');
+        postContractorRequest.send(splitWritten[i]);
+
+        postContractorRequest.onreadystatechange = function() {
+            if (this.readyState == XMLHttpRequest.DONE && this.status === 200) {
+             console.log("postProject successfully completed.");
+            }
+        }     
+    }
 
 }
 
