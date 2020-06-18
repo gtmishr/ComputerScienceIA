@@ -1,8 +1,39 @@
 var isProjectExpandedArray = [false]
 
-function addWrittenContractors() {
+// DOESN'T CURRENTLY WORK BUT IS CLOSE
+function addWrittenContractors(file) {
 
-    console.log(contractorData.txt);
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function () {
+        if (rawFile.readyState === 4)
+        {
+            if (rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                console.log(allText);
+            }
+        }
+    }
+    rawFile.send(null);
+
+}
+
+function addWrittenProjects(file) {
+
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function () {
+        if (rawFile.readyState === 4)
+        {
+            if (rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                console.log(allText);
+            }
+        }
+    }
+    rawFile.send(null);
 
 }
 
@@ -150,4 +181,5 @@ function getContractorRequest() {
 
 }
 
-addWrittenContractors();
+addWrittenContractors("contractorData.txt");
+addWrittenProjects("projectData.txt");
