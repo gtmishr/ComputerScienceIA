@@ -33,7 +33,6 @@ function addWrittenContractors(file) {
             }
         }     
     }
-
 }
 
 function addWrittenProjects(file) {
@@ -69,6 +68,17 @@ function addWrittenProjects(file) {
             }
         }     
     }
+
+}
+
+function addNewHTMLElements() {
+
+    var toDuplicate = document.getElementById("project0");
+    var clone = toDuplicate.cloneNode(true);
+
+    document.getElementById("searchMenu").appendChild(clone);
+    isProjectExpandedArray.push(false);
+    console.log(isProjectExpandedArray);
 
 }
 
