@@ -1,4 +1,4 @@
-var isProjectExpandedArray = [false]
+var isProjectExpandedArray = [false];
 
 function addWrittenContractors(file) {
 
@@ -68,15 +68,47 @@ function addWrittenProjects(file) {
 }
 
 function addNewHTMLElements() {
-
-    var toDuplicate = document.getElementById("project0");
-    var clone = toDuplicate.cloneNode(true);
-
-    clone.id = "project" + isProjectExpandedArray.length;
-    clone.setAttribute("onclick", "expandProject(" + isProjectExpandedArray.length + ")");
-    isProjectExpandedArray.push(false);
-
-    document.getElementById("searchMenu").appendChild(clone);
+    
+    var newDivCreated = document.createElement("div");
+    newDivCreated.id = "project" + isProjectExpandedArray + "Div";
+    document.getElementById("searchMenu").appendChild(newDivCreated);
+    
+    var elementsToDuplicate = [document.getElementById("project0"), document.getElementById("building0ProjectTitle"), document.getElementById("building0ProjectDescription"), document.getElementById("project0Table"), document.getElementById("project0ContractorTable")];
+    
+    var i;
+    for (i = 0; i < elementsToDuplicate.length; i++) {
+        
+        var clone = elementsToDuplicate[i].cloneNode(true);
+        
+        if (elementsToDuplicate[i].id == "project0") {
+            debugger
+            clone.id = "project" + isProjectExpandedArray.length;
+            clone.setAttribute("onclick", "expandProject(" + isProjectExpandedArray.length + ")");
+            isProjectExpandedArray.push(false);            
+            document.getElementById(newDivCreated.id).appendChild(clone);
+        }
+        
+        if (elementsToDuplicate[i].id == "building0ProjectTitle") {
+            clone.id = "building" + isProjectExpandedArray.length + "ProjectTitle";
+            document.getElementById(newDivCreated.id).appendChild(clone);
+        }
+        
+        if (elementsToDuplicate[i].id == "building0ProjectDescription") {
+            clone.id = "building" + isProjectExpandedArray.length + "ProjectDescription";
+            document.getElementById(newDivCreated.id).appendChild(clone);
+        }
+        
+        if (elementsToDuplicate[i].id == "project0Table") {
+            clone.id = "project" + isProjectExpandedArray.length + "Table";
+            document.getElementById(newDivCreated.id).appendChild(clone);
+        }
+        
+        if (elementsToDuplicate[i].id == "project0ContractorTable") {
+            clone.id = "project" + isProjectExpandedArray.length + "ContractorTable";
+            document.getElementById(newDivCreated.id).appendChild(clone);
+        }
+                
+    }
 
 }
 
