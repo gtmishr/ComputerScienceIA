@@ -81,7 +81,6 @@ th, td {
     font-size: 14px;
 }
 
-.projectPhoto {
-    height: 250px;
-    margin: 5px;
+#project0 {
+    display: hidden;
 }

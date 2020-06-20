@@ -76,9 +76,11 @@ function addNewHTMLElements() {
     var toDuplicate = document.getElementById("project0");
     var clone = toDuplicate.cloneNode(true);
 
-    document.getElementById("searchMenu").appendChild(clone);
+    clone.id = "project" + isProjectExpandedArray.length;
+    clone.setAttribute("onclick", "expandProject(" + isProjectExpandedArray.length + ")");
     isProjectExpandedArray.push(false);
-    console.log(isProjectExpandedArray);
+
+    document.getElementById("searchMenu").appendChild(clone);
 
 }
 
@@ -199,15 +201,15 @@ function deleteContractor() {
 function expandProject(projectNumber) {
 
   if (isProjectExpandedArray[projectNumber] == false) {
-    document.getElementById("project" + projectNumber).style.height = "900px";
-    document.getElementById("project" + projectNumber).style.width = "900px";
-    document.getElementById("project" + projectNumber + "TodoItemsTable").style.display = "inherit";
+    document.getElementById("project" + projectNumber).style.height = "700px";
+    document.getElementById("project" + projectNumber).style.width = "700px";
+    document.getElementById("project" + projectNumber + "Table").style.display = "inherit";
     document.getElementById("project" + projectNumber + "ContractorTable").style.display = "inherit";
     isProjectExpandedArray[projectNumber] = true;
   } else {
     document.getElementById("project" + projectNumber).style.height = "500px";
     document.getElementById("project" + projectNumber).style.width = "400px";
-    document.getElementById("project" + projectNumber + "TodoItemsTable").style.display = "none";
+    document.getElementById("project" + projectNumber + "Table").style.display = "none";
     document.getElementById("project" + projectNumber + "ContractorTable").style.display = "none";
     isProjectExpandedArray[projectNumber] = false;
   }

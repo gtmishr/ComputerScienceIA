@@ -11,7 +11,6 @@ function addWrittenContractors(file) {
             if (rawFile.status === 200 || rawFile.status == 0) {
                 var allText = rawFile.responseText;
                 splitWritten = allText.split("\n");
-                console.log(splitWritten);
             }
         }
     }
@@ -29,7 +28,6 @@ function addWrittenContractors(file) {
 
         postContractorRequest.onreadystatechange = function() {
             if (this.readyState == XMLHttpRequest.DONE && this.status === 200) {
-             console.log("postContractorRequest successfully completed.");
             }
         }     
     }
@@ -46,7 +44,6 @@ function addWrittenProjects(file) {
             if (rawFile.status === 200 || rawFile.status == 0) {
                 var allText = rawFile.responseText;
                 splitWritten = allText.split("\n");
-                console.log(splitWritten);
             }
         }
     }
@@ -64,7 +61,6 @@ function addWrittenProjects(file) {
 
         postContractorRequest.onreadystatechange = function() {
             if (this.readyState == XMLHttpRequest.DONE && this.status === 200) {
-             console.log("postProject successfully completed.");
             }
         }     
     }
@@ -76,9 +72,11 @@ function addNewHTMLElements() {
     var toDuplicate = document.getElementById("project0");
     var clone = toDuplicate.cloneNode(true);
 
-    document.getElementById("searchMenu").appendChild(clone);
+    clone.id = "project" + isProjectExpandedArray.length;
+    clone.setAttribute("onclick", "expandProject(" + isProjectExpandedArray.length + ")");
     isProjectExpandedArray.push(false);
-    console.log(isProjectExpandedArray);
+
+    document.getElementById("searchMenu").appendChild(clone);
 
 }
 
@@ -113,8 +111,6 @@ function createNewProject() {
     var rawProjectInput = {projectID: projectIDInput, clientName: clientNameInput, streetAddress: streetAddressInput, suburb: suburbInput, description: descriptionInput};
     var inputProjectParsed = JSON.stringify(rawProjectInput);
 
-    console.log(inputProjectParsed);
-
     var postProjectRequest = new XMLHttpRequest();
     postProjectRequest.open('POST', 'http://localhost:8080/api/project', true);
 
@@ -123,7 +119,6 @@ function createNewProject() {
 
     postProjectRequest.onreadystatechange = function() {
         if (this.readyState == XMLHttpRequest.DONE && this.status === 200) {
-            console.log("postProjectRequest successfully completed.");
         }
     }
 
@@ -143,7 +138,6 @@ function deleteProject() {
 
     deleteProjectRequest.onreadystatechange = function() {
         if (this.readyState == XMLHttpRequest.DONE && this.status === 200) {
-            console.log("deleteProjectRequest successfully completed.");
         }
     }
 
@@ -174,7 +168,6 @@ function createNewContractor() {
 
     postContractorRequest.onreadystatechange = function() {
         if (this.readyState == XMLHttpRequest.DONE && this.status === 200) {
-            console.log("postContractorRequest successfully completed.");
         }
     }
     
@@ -187,11 +180,9 @@ function deleteContractor() {
     var deleteContractorRequest = new XMLHttpRequest();
     deleteContractorRequest.open('DELETE', 'http://localhost:8080/api/contractor/' + contractorLicenceIDToDelete);
     deleteContractorRequest.send(contractorLicenceIDToDelete);
-    console.log(deleteContractorRequest);
 
     deleteContractorRequest.onreadystatechange = function() {
         if (this.readyState == XMLHttpRequest.DONE && this.status === 200) {
-            console.log("deleteContractorRequest successfully completed.");
         }
     }
 }
@@ -199,15 +190,15 @@ function deleteContractor() {
 function expandProject(projectNumber) {
 
   if (isProjectExpandedArray[projectNumber] == false) {
-    document.getElementById("project" + projectNumber).style.height = "900px";
-    document.getElementById("project" + projectNumber).style.width = "900px";
-    document.getElementById("project" + projectNumber + "TodoItemsTable").style.display = "inherit";
+    document.getElementById("project" + projectNumber).style.height = "700px";
+    document.getElementById("project" + projectNumber).style.width = "700px";
+    document.getElementById("project" + projectNumber + "Table").style.display = "inherit";
     document.getElementById("project" + projectNumber + "ContractorTable").style.display = "inherit";
     isProjectExpandedArray[projectNumber] = true;
   } else {
     document.getElementById("project" + projectNumber).style.height = "500px";
     document.getElementById("project" + projectNumber).style.width = "400px";
-    document.getElementById("project" + projectNumber + "TodoItemsTable").style.display = "none";
+    document.getElementById("project" + projectNumber + "Table").style.display = "none";
     document.getElementById("project" + projectNumber + "ContractorTable").style.display = "none";
     isProjectExpandedArray[projectNumber] = false;
   }
@@ -221,7 +212,6 @@ function getContractorRequest() {
 
     getContractorRequest.onload = () => {
         var getContractorData = JSON.parse(getContractorRequest.response);
-        console.log("getContractorRequest successfully completed.");
     }
 
 }
