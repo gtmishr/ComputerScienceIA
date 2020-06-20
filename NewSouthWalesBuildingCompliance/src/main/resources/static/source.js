@@ -1,16 +1,18 @@
 var isProjectExpandedArray = [false];
+var tempProjectData;
+var tempContractorData;
 
 function addWrittenContractors(file) {
 
-    var rawFile = new XMLHttpRequest();
+    var rawFile = new XMLHttpRequest(); // Create a new XML HTTP request to GET objects from any imported file
     var splitWritten = [];
     
     rawFile.open("GET", file, false);
     rawFile.onreadystatechange = function () {
         if (rawFile.readyState === 4) {
-            if (rawFile.status === 200 || rawFile.status == 0) {
+            if (rawFile.status === 200 || rawFile.status == 0) { // If the status of the request is positive...
                 var allText = rawFile.responseText;
-                splitWritten = allText.split("\n");
+                splitWritten = allText.split("\n"); // Split the response by line, and append all items to an array
             }
         }
     }
@@ -18,18 +20,14 @@ function addWrittenContractors(file) {
     rawFile.send(null);
     
     var i;
-    for (i = 0; i < splitWritten.length; i++) {
+    for (i = 0; i < splitWritten.length; i++) { // Loop through all of the classes that come through...
         
         var postContractorRequest = new XMLHttpRequest();
-        postContractorRequest.open('POST', 'http://localhost:8080/api/contractor', true);
+        postContractorRequest.open('POST', 'http://localhost:8080/api/contractor', true); // Create a new XML HTTP request to POST objects
 
         postContractorRequest.setRequestHeader("Content-Type", 'application/json');
-        postContractorRequest.send(splitWritten[i]);
+        postContractorRequest.send(splitWritten[i]); // POST the newfound objects to the local server
 
-        postContractorRequest.onreadystatechange = function() {
-            if (this.readyState == XMLHttpRequest.DONE && this.status === 200) {
-            }
-        }     
     }
 }
 
@@ -68,6 +66,9 @@ function addWrittenProjects(file) {
 }
 
 function addNewHTMLElements() {
+
+    getContractor();
+    getProject();
     
     var newDivCreated = document.createElement("div");
     newDivCreated.id = "project" + isProjectExpandedArray + "Div";
@@ -214,15 +215,40 @@ function expandProject(projectNumber) {
 
 }
 
-function getContractorRequest() {
+function getContractor() {
 
     var getContractorRequest = new XMLHttpRequest();
     getContractorRequest.open('GET', 'http://localhost:8080/api/contractor', true); // Creates a new XMLHttpRequest to get JSON data stored on local server
 
     getContractorRequest.onload = () => {
         var getContractorData = JSON.parse(getContractorRequest.response); // Parses response using JSON library into JavaScript object
+        console.log(getContractorData);
     }
 
+}
+
+function getProject() {
+
+    var getProjectRequest = new XMLHttpRequest();
+    getProjectRequest.open('GET', 'http://localhost8080/api/project', true) // Creates a new XMLHttpRequest to get JSON data stored on local server
+
+    getProjectRequest.onload = () => {
+        var getProjectData = JSON.parse(getContractorRequest.response); // Parses response using JSON library into JavaScript object
+        console.log(getProjectData);
+    }
+
+}
+
+// NOT CURRENTLY WORKING
+function populateProjectTable() {
+    var i;
+    var j;
+
+    for (i = 1; i < table.rows.length; i++) {
+      for (j = 0; j < table.rows[i].cells.length; j++) {
+           table.rows[i].cells[j].innerHTML = array[i - 1][j];
+      }
+    }
 }
 
 addWrittenContractors("contractorData.txt");
