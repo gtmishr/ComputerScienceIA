@@ -71,39 +71,39 @@ function addNewHTMLElements() {
     
     var newDivCreated = document.createElement("div");
     newDivCreated.id = "project" + isProjectExpandedArray + "Div";
-    document.getElementById("searchMenu").appendChild(newDivCreated);
-    
+    document.getElementById("searchMenu").appendChild(newDivCreated); // Creates a new searchable HTML "div" class such that added items can be appended
+
+    // Gets an array of everything that needs to be duplicated from template project (project0)
     var elementsToDuplicate = [document.getElementById("project0"), document.getElementById("building0ProjectTitle"), document.getElementById("building0ProjectDescription"), document.getElementById("project0Table"), document.getElementById("project0ContractorTable")];
     
     var i;
-    for (i = 0; i < elementsToDuplicate.length; i++) {
+    for (i = 0; i < elementsToDuplicate.length; i++) { // Loops through everything that needs to be duplicated from template project (project0)
         
-        var clone = elementsToDuplicate[i].cloneNode(true);
+        var clone = elementsToDuplicate[i].cloneNode(true); // Create a clone of the HTML id required as defined in elementsToDuplicate[i]
         
         if (elementsToDuplicate[i].id == "project0") {
-            debugger
-            clone.id = "project" + isProjectExpandedArray.length;
+            clone.id = "project" + isProjectExpandedArray.length; // Change ID such that there is no duplicate HTML IDs
             clone.setAttribute("onclick", "expandProject(" + isProjectExpandedArray.length + ")");
-            isProjectExpandedArray.push(false);            
-            document.getElementById(newDivCreated.id).appendChild(clone);
+            isProjectExpandedArray.push(false);         // As new project is created but not expanded, add "false" to isProjectExpanded Array
+            document.getElementById(newDivCreated.id).appendChild(clone); // Add to earlier programmatically created "div" element
         }
         
-        if (elementsToDuplicate[i].id == "building0ProjectTitle") {
+        if (elementsToDuplicate[i].id == "building0ProjectTitle") { // As above, change ID to avoid duplicates and add to new "div" element
             clone.id = "building" + isProjectExpandedArray.length + "ProjectTitle";
             document.getElementById(newDivCreated.id).appendChild(clone);
         }
         
-        if (elementsToDuplicate[i].id == "building0ProjectDescription") {
+        if (elementsToDuplicate[i].id == "building0ProjectDescription") { // As above, change ID to avoid duplicates and add to new "div" element
             clone.id = "building" + isProjectExpandedArray.length + "ProjectDescription";
             document.getElementById(newDivCreated.id).appendChild(clone);
         }
-        
-        if (elementsToDuplicate[i].id == "project0Table") {
+
+        if (elementsToDuplicate[i].id == "project0Table") { // As above, change ID to avoid duplicates and add to new "div" element
             clone.id = "project" + isProjectExpandedArray.length + "Table";
             document.getElementById(newDivCreated.id).appendChild(clone);
         }
         
-        if (elementsToDuplicate[i].id == "project0ContractorTable") {
+        if (elementsToDuplicate[i].id == "project0ContractorTable") { // As above, change ID to avoid duplicates and add to new "div" element
             clone.id = "project" + isProjectExpandedArray.length + "ContractorTable";
             document.getElementById(newDivCreated.id).appendChild(clone);
         }
