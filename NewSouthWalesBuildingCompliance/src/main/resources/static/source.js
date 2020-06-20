@@ -134,50 +134,36 @@ function searchBar() {
 
 function createNewProject() {
 
-    var projectIDInput = document.getElementById("projectIDInput").value;
+    var projectIDInput = document.getElementById("projectIDInput").value; // Gets all values that user inputs into website and stores as variables
     var clientNameInput = document.getElementById("clientNameInput").value;
     var streetAddressInput = document.getElementById("streetAddressInput").value;
     var suburbInput = document.getElementById("suburbInput").value;
     var descriptionInput = document.getElementById("descriptionInput").value;
 
     var rawProjectInput = {projectID: projectIDInput, clientName: clientNameInput, streetAddress: streetAddressInput, suburb: suburbInput, description: descriptionInput};
-    var inputProjectParsed = JSON.stringify(rawProjectInput);
+    var inputProjectParsed = JSON.stringify(rawProjectInput); // Creates Javascript object with input, and converts into JSON using library
 
     var postProjectRequest = new XMLHttpRequest();
-    postProjectRequest.open('POST', 'http://localhost:8080/api/project', true);
+    postProjectRequest.open('POST', 'http://localhost:8080/api/project', true); // Creates a new XMLHttpRequest to post new contractor object
 
     postProjectRequest.setRequestHeader("Content-Type", 'application/json');
     postProjectRequest.send(inputProjectParsed);
 
-    postProjectRequest.onreadystatechange = function() {
-        if (this.readyState == XMLHttpRequest.DONE && this.status === 200) {
-        }
-    }
-
-    var templateButtonQuery = document.querySelector("#project0");
-    var templateButtonClone = templateButtonQuery.cloneNode(true);
-    isProjectExpandedArray.push(false);
-    templateButtonClone.id = "project" + isProjectExpandedArray.length;
 }
 
 function deleteProject() {
 
-    var projectIDInputToDelete = document.getElementById("projectIDInputToDelete").value;
+    var projectIDInputToDelete = document.getElementById("projectIDInputToDelete").value; // Gets the value of projectID user defined
 
     var deleteProjectRequest = new XMLHttpRequest();
     deleteProjectRequest.open('DELETE', 'http://localhost:8080/api/project/' + projectIDInputToDelete);
-    deleteProjectRequest.send(projectIDInputToDelete);
-
-    deleteProjectRequest.onreadystatechange = function() {
-        if (this.readyState == XMLHttpRequest.DONE && this.status === 200) {
-        }
-    }
+    deleteProjectRequest.send(projectIDInputToDelete); // Creates new XMLHttpRequest to delete project from local server
 
 }
 
 function createNewContractor() {
 
-    var contractorLicenceID = document.getElementById("contractorLicenceID").value;
+    var contractorLicenceID = document.getElementById("contractorLicenceID").value; // Gets all values that user inputs into website and stores as variables
     var contractorLicenceNumber = document.getElementById("contractorLicenceNumber").value; 
     var contractorBusinessNames = document.getElementById("contractorBusinessNames").value;
     var contractorCategories = document.getElementById("contractorCategories").value;
@@ -190,33 +176,24 @@ function createNewContractor() {
     var contractorSuburb = document.getElementById("contractorSuburb").value;
 
     var rawContractorInput = {licenceID: contractorLicenceID, licenceNumber: contractorLicenceNumber, businessNames: contractorBusinessNames, categories: contractorCategories, classes: contractorClasses, licenceName: contractorLicenceName, licenceType: contractorLicenceType, licensee: contractorLicensee, postcode: contractorPostcode, status: contractorStatus, suburb: contractorSuburb};
-    var inputContractorParsed = JSON.stringify(rawContractorInput);
+    var inputContractorParsed = JSON.stringify(rawContractorInput); // Creates Javascript object with input, and converts into JSON using library
     
     var postContractorRequest = new XMLHttpRequest();
-    postContractorRequest.open('POST', 'http://localhost:8080/api/contractor', true);
+    postContractorRequest.open('POST', 'http://localhost:8080/api/contractor', true); // Creates a new XMLHttpRequest to post new contractor object
 
     postContractorRequest.setRequestHeader("Content-Type", 'application/json');
     postContractorRequest.send(inputContractorParsed);
-
-    postContractorRequest.onreadystatechange = function() {
-        if (this.readyState == XMLHttpRequest.DONE && this.status === 200) {
-        }
-    }
     
 }
 
 function deleteContractor() {
 
-    var contractorLicenceIDToDelete = document.getElementById("contractorLicenceIDToDelete").value;
+    var contractorLicenceIDToDelete = document.getElementById("contractorLicenceIDToDelete").value; // Gets the value of contractorLicenceID user defined
 
     var deleteContractorRequest = new XMLHttpRequest();
     deleteContractorRequest.open('DELETE', 'http://localhost:8080/api/contractor/' + contractorLicenceIDToDelete);
-    deleteContractorRequest.send(contractorLicenceIDToDelete);
+    deleteContractorRequest.send(contractorLicenceIDToDelete); // Creates new XMLHttpRequest to delete contractor from local server
 
-    deleteContractorRequest.onreadystatechange = function() {
-        if (this.readyState == XMLHttpRequest.DONE && this.status === 200) {
-        }
-    }
 }
 
 function expandProject(projectNumber) {
@@ -240,10 +217,10 @@ function expandProject(projectNumber) {
 function getContractorRequest() {
 
     var getContractorRequest = new XMLHttpRequest();
-    getContractorRequest.open('GET', 'http://localhost:8080/api/contractor', true);
+    getContractorRequest.open('GET', 'http://localhost:8080/api/contractor', true); // Creates a new XMLHttpRequest to get JSON data stored on local server
 
     getContractorRequest.onload = () => {
-        var getContractorData = JSON.parse(getContractorRequest.response);
+        var getContractorData = JSON.parse(getContractorRequest.response); // Parses response using JSON library into JavaScript object
     }
 
 }
